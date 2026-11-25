@@ -1,0 +1,74 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_04__h2M4SuA__env_vj32n_th\app
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+tests/test_feature_no_color_env.py::test_no_color_disables_color_even_on_tty FAILED [ 14%]
+tests/test_feature_no_color_env.py::test_empty_no_color_has_no_effect FAILED [ 28%]
+tests/test_feature_no_color_env.py::test_force_color_enables_color_on_non_tty FAILED [ 42%]
+tests/test_feature_no_color_env.py::test_force_color_zero_or_false_does_not_force FAILED [ 57%]
+tests/test_feature_no_color_env.py::test_no_color_overrides_force_color FAILED [ 71%]
+tests/test_feature_no_color_env.py::test_explicit_color_argument_overrides_env_vars FAILED [ 85%]
+tests/test_feature_no_color_env.py::test_context_color_overrides_env_vars FAILED [100%]
+
+================================== FAILURES ===================================
+__________________ test_no_color_disables_color_even_on_tty ___________________
+tests\test_feature_no_color_env.py:20: in test_no_color_disables_color_even_on_tty
+    assert resolve_color_default() is False
+E   assert None is False
+E    +  where None = resolve_color_default()
+______________________ test_empty_no_color_has_no_effect ______________________
+tests\test_feature_no_color_env.py:41: in test_empty_no_color_has_no_effect
+    assert resolve_color_default() is True
+E   assert None is True
+E    +  where None = resolve_color_default()
+__________________ test_force_color_enables_color_on_non_tty __________________
+tests\test_feature_no_color_env.py:51: in test_force_color_enables_color_on_non_tty
+    assert resolve_color_default() is True
+E   assert None is True
+E    +  where None = resolve_color_default()
+________________ test_force_color_zero_or_false_does_not_force ________________
+tests\test_feature_no_color_env.py:69: in test_force_color_zero_or_false_does_not_force
+    assert resolve_color_default() is True
+E   assert None is True
+E    +  where None = resolve_color_default()
+_____________________ test_no_color_overrides_force_color _____________________
+tests\test_feature_no_color_env.py:79: in test_no_color_overrides_force_color
+    assert resolve_color_default() is False
+E   assert None is False
+E    +  where None = resolve_color_default()
+_______________ test_explicit_color_argument_overrides_env_vars _______________
+tests\test_feature_no_color_env.py:87: in test_explicit_color_argument_overrides_env_vars
+    assert resolve_color_default() is False
+E   assert None is False
+E    +  where None = resolve_color_default()
+____________________ test_context_color_overrides_env_vars ____________________
+tests\test_feature_no_color_env.py:105: in test_context_color_overrides_env_vars
+    assert resolve_color_default() is False
+E   assert None is False
+E    +  where None = resolve_color_default()
+=========================== short test summary info ===========================
+FAILED tests/test_feature_no_color_env.py::test_no_color_disables_color_even_on_tty
+FAILED tests/test_feature_no_color_env.py::test_empty_no_color_has_no_effect
+FAILED tests/test_feature_no_color_env.py::test_force_color_enables_color_on_non_tty
+FAILED tests/test_feature_no_color_env.py::test_force_color_zero_or_false_does_not_force
+FAILED tests/test_feature_no_color_env.py::test_no_color_overrides_force_color
+FAILED tests/test_feature_no_color_env.py::test_explicit_color_argument_overrides_env_vars
+FAILED tests/test_feature_no_color_env.py::test_context_color_overrides_env_vars
+============================== 7 failed in 0.51s ==============================
+
+=== REGRESSION TESTS ===
+........................................................................ [ 12%]
+........................................................................ [ 24%]
+..............ss..........................ssss.......................... [ 36%]
+......ssssssssssss......................sssssss......................... [ 48%]
+........................................................................ [ 60%]
+........................................................................ [ 72%]
+........................................................................ [ 84%]
+........................................................................ [ 96%]
+..................                                                       [100%]
+569 passed, 25 skipped in 3.42s
+

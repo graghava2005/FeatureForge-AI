@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FeatureForge AI — Hackathon Presentation</title>
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #FAFAFA;
+    --text: #171717;
+    --muted: #666666;
+    --orange: #F97316;
+    --orange-light: #FFF7ED;
+    --border: #E5E7EB;
+    --green: #15803D;
+    --red: #B91C1C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #F5F5F5;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .deck-shell {
+    width: 100%;
+    max-width: 1060px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .brand { font-weight: 700; font-size: 14px; color: var(--text); }
+  .brand span { color: var(--orange); }
+  .slide-counter { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .slide {
+    display: none;
+    padding: 44px 52px;
+    min-height: 540px;
+  }
+  .slide.active { display: block; }
+  .kicker {
+    display: inline-block;
+    background: var(--orange-light);
+    color: #C2410C;
+    border: 1px solid #FDBA74;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 38px; line-height: 1.15; margin-bottom: 14px; font-weight: 800; }
+  h2 { font-size: 28px; line-height: 1.2; margin-bottom: 18px; font-weight: 700; }
+  p.lead { font-size: 18px; color: var(--muted); line-height: 1.55; margin-bottom: 24px; max-width: 820px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 12px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px; }
+  .card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card-accent {
+    background: var(--orange-light);
+    border: 1px solid #FED7AA;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .card p, .card li, .card-accent p, .card-accent li { font-size: 14px; color: #374151; line-height: 1.5; }
+  ul { padding-left: 18px; }
+  li { margin-bottom: 6px; }
+  code {
+    background: #F3F4F6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+  }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+  th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; }
+  th { background: var(--surface); font-weight: 700; color: var(--text); }
+  .stat-num { font-size: 28px; font-weight: 800; color: var(--orange); }
+  .stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 600; margin-top: 4px; }
+  .warn-box {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: var(--red);
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+  }
+  .flow-step {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--orange);
+    border-radius: 8px;
+    padding: 12px 14px;
+    flex: 1 1 160px;
+  }
+  .flow-step strong { display: block; font-size: 13px; margin-bottom: 4px; }
+  .flow-step span { font-size: 12.5px; color: var(--muted); }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  button {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+  }
+  button.primary {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #FFFFFF;
+  }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  @media print {
+    body { background: #FFF; padding: 0; }
+    .topbar, .controls { display: none; }
+    .deck-shell { border: none; }
+    .slide { display: block !important; page-break-after: always; min-height: auto; border-bottom: 1px solid #E5E7EB; }
+  }
+</style>
+</head>
+<body>
+<div class="deck-shell">
+  <div class="topbar">
+    <div class="brand">FeatureForge <span>AI</span> &bull; Track 1: Coding Task Factory</div>
+    <div class="slide-counter" id="counter">Slide 1 / 8</div>
+  </div>
+
+  <!-- Slide 1 -->
+  <section class="slide active">
+    <span class="kicker">Innodata AI Hackathon &bull; Track 1</span>
+    <h1>FeatureForge AI</h1>
+    <p class="lead">Self-Auditing AI Coding Benchmark Factory — automated generation and multi-layer verification of realistic feature-development tasks from open-source repositories.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="stat-num">pallets/click</div>
+        <div class="stat-label">Target Repository</div>
+        <p style="margin-top:8px;">Pinned clean at commit <code>08b803cf32ceb2ae...</code> (2,543 baseline tests passing).</p>
+      </div>
+      <div class="card">
+        <div class="stat-num">5 Tasks</div>
+        <div class="stat-label">Harbor 0.25.0 Packages</div>
+        <p style="margin-top:8px;">Five distinct feature-development tasks across separate subsystems.</p>
+      </div>
+      <div class="card">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Quality &amp; Mutation Verified</div>
+        <p style="margin-top:8px;">5/5 quality valid, 15/15 mutants killed, 5/5 NOP=0.0, 5/5 Oracle=1.0 (local worktree).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 2 -->
+  <section class="slide">
+    <span class="kicker">Problem Statement</span>
+    <h2>Existing Problems in AI Coding Benchmarks</h2>
+    <p class="lead">Building trustworthy coding benchmarks manually is slow, expensive, and prone to subtle evaluation flaws.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Repetitive &amp; Manual Authoring</h3>
+        <ul>
+          <li>Benchmarks over-index on small bug fixes instead of realistic feature development.</li>
+          <li>Hand-writing requirements, patches, and test suites does not scale.</li>
+          <li>Superficial task variations inflate task counts without testing distinct behaviors.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Unverified Quality &amp; False Novelty</h3>
+        <ul>
+          <li>Proposed features may already exist in the repository base commit.</li>
+          <li>Weak tests pass without implementing the feature or mirror internal logic.</li>
+          <li>Missing regression checks hide silent breakage of existing APIs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3 -->
+  <section class="slide">
+    <span class="kicker">Solution &amp; Innovation</span>
+    <h2>Automated, Self-Auditing Task Factory</h2>
+    <p class="lead">FeatureForge AI combines programmatic repository inspection, non-LLM novelty auditing, automated test/patch synthesis, and empirical verification.</p>
+    <div class="grid-2">
+      <div class="card-accent">
+        <h3>Programmatic Novelty Verification</h3>
+        <ul>
+          <li>Parses Python ASTs and Git logs rather than trusting LLM novelty claims.</li>
+          <li>Demonstrated by catching and rejecting an already-existing <code>deprecated</code> candidate with exact AST symbol evidence.</li>
+          <li>Enforces distinct subsystems and RapidFuzz dissimilarity (&lt; 75%).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deterministic Core + Optional LLM</h3>
+        <ul>
+          <li>Core pipeline runs reliably without paid API dependence.</li>
+          <li>Optional <code>OPENAI_API_KEY</code> enrichment via <code>LLMClient</code> with automatic fallback.</li>
+          <li>Zero hardcoded credentials in source, tasks, or submission artifacts.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4 -->
+  <section class="slide">
+    <span class="kicker">Architecture</span>
+    <h2>End-to-End 8-Module Pipeline</h2>
+    <p class="lead">Clean modular architecture from repository ingestion to Harbor evaluation and Streamlit reporting.</p>
+    <div class="flow">
+      <div class="flow-step"><strong>A. Analyzer</strong><span>Git SHA + 17 src ASTs + 58 test files</span></div>
+      <div class="flow-step"><strong>B. Generator</strong><span>Structured 8-field feature proposals</span></div>
+      <div class="flow-step"><strong>C. Novelty Gate</strong><span>AST + similarity + ambiguity checks</span></div>
+      <div class="flow-step"><strong>D &amp; E. Oracle &amp; Tests</strong><span>Unified diffs + fail_to_pass + pass_to_pass</span></div>
+      <div class="flow-step"><strong>F. QA &amp; Mutation</strong><span>6 checks + 15 deliberate mutants</span></div>
+      <div class="flow-step"><strong>G &amp; H. Harbor &amp; UI</strong><span>Harbor 0.25.0 + 6-page dashboard</span></div>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3>Independent Harbor 0.25.0 Task Layout</h3>
+      <p>Each <code>tasks/task_01..05/</code> directory ships <code>instruction.md</code>, Harbor-validated <code>task.toml</code> (with full 40-char base SHA), <code>environment/Dockerfile</code>, <code>solution/solve.sh</code> + <code>feature.patch</code>, and <code>tests/test.sh</code> + JSON manifests.</p>
+    </div>
+  </section>
+
+  <!-- Slide 5 -->
+  <section class="slide">
+    <span class="kicker">Task Diversity</span>
+    <h2>Five Distinct Feature-Development Tasks</h2>
+    <table>
+      <thead>
+        <tr><th>Task ID</th><th>Subsystem</th><th>Feature Title</th><th>Target File(s)</th><th>Tests (F2P / P2P)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>task_01</code></td><td><code>parameter-validation</code></td><td>Option <code>conflicts_with</code> &amp; <code>requires</code> constraints</td><td><code>click/core.py</code></td><td>8 / 795</td></tr>
+        <tr><td><code>task_02</code></td><td><code>command-routing</code></td><td>Command &amp; Group <code>aliases</code> + help &amp; collisions</td><td><code>click/core.py</code></td><td>7 / 160</td></tr>
+        <tr><td><code>task_03</code></td><td><code>parameter-types</code></td><td>Human-readable <code>click.ByteSize</code> (IEC/SI, bounds)</td><td><code>click/types.py</code>, <code>__init__.py</code></td><td>7 (29 cases) / 104</td></tr>
+        <tr><td><code>task_04</code></td><td><code>terminal-color</code></td><td>Standard <code>NO_COLOR</code> &amp; <code>FORCE_COLOR</code> resolution</td><td><code>click/_compat.py</code>, <code>globals.py</code></td><td>7 / 569</td></tr>
+        <tr><td><code>task_05</code></td><td><code>terminal-ui</code></td><td>ANSI-aware <code>format_table</code> &amp; <code>echo_table</code></td><td><code>click/termui.py</code>, <code>__init__.py</code></td><td>7 / 263</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Slide 6 -->
+  <section class="slide">
+    <span class="kicker">Self-Auditing Verification</span>
+    <h2>Quality Auditing, Mutation Testing &amp; Harbor</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>6-Dimension Quality Audit</h3>
+        <ul>
+          <li>Requirement-test consistency</li>
+          <li>Base-fail / patched-pass coverage</li>
+          <li>Regression safety (<code>pass_to_pass</code>)</li>
+          <li>Mutation testing</li>
+          <li>Reversed-order isolation</li>
+          <li>Repeated-run determinism</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deliberate Mutation Testing</h3>
+        <p>Injects 3 targeted source mutations per task (15 total) into patched worktrees—e.g. bypassing <code>conflicts_with</code>, hiding aliases, ignoring <code>NO_COLOR</code>, or breaking ANSI width alignment.</p>
+        <p style="margin-top:8px;"><strong>Result:</strong> <code>15/15</code> killed (<code>100.0%</code>).</p>
+      </div>
+      <div class="card">
+        <h3>Harbor 0.25.0 Execution</h3>
+        <p>Executes real <code>harbor run</code> CLI trials for both <code>-a nop</code> (must fail new feature, pass regressions &rarr; <code>0.0</code>) and <code>-a oracle</code> (must pass both &rarr; <code>1.0</code>).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 7 -->
+  <section class="slide">
+    <span class="kicker">Verified Outcomes &amp; Transparency</span>
+    <h2>Actual Results &amp; Known Limitations</h2>
+    <div class="grid-2">
+      <div class="card">
+        <table>
+          <thead><tr><th>Metric</th><th>Verified Result</th></tr></thead>
+          <tbody>
+            <tr><td>Task packages</td><td><strong>5 / 5</strong> complete &amp; valid</td></tr>
+            <tr><td>Click baseline tests</td><td><strong>2,543 passed</strong> (0 failed)</td></tr>
+            <tr><td>Quality audit</td><td><strong>5 / 5 valid</strong> (0 failed checks)</td></tr>
+            <tr><td>Mutation detection</td><td><strong>15 / 15</strong> (100.0%)</td></tr>
+            <tr><td>NOP (<code>LocalWorktreeEnvironment</code>)</td><td><strong>5 / 5 rewards = 0.0</strong></td></tr>
+            <tr><td>Oracle (<code>LocalWorktreeEnvironment</code>)</td><td><strong>5 / 5 rewards = 1.0</strong></td></tr>
+            <tr><td>Streamlit dashboard</td><td><strong>6 / 6 pages</strong>, HTTP 200</td></tr>
+            <tr><td>Docker validation</td><td><strong>Not executed</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="warn-box">
+          <strong>Honest Limitation — Docker Validation Incomplete:</strong><br/>
+          Docker Desktop, Podman, and WSL2 are not installed on this non-administrator Windows machine, so Docker container execution could not be run. Default <code>harbor run</code> exited <code>1</code> (<em>Docker is not installed or not on PATH</em>).<br/><br/>
+          Harbor <code>0.25.0</code> NOP/Oracle results above were executed via <code>--env core.harbor_local_env:LocalWorktreeEnvironment</code> in isolated git checkouts and are <strong>explicitly reported separately from Docker validation</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 8 -->
+  <section class="slide">
+    <span class="kicker">Conclusion &amp; Roadmap</span>
+    <h2>Future Scope &amp; Submission Readiness</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Next Steps &amp; Roadmap</h3>
+        <ul>
+          <li>Run included <code>environment/Dockerfile</code> packages on a Docker-enabled Linux CI host.</li>
+          <li>Extend factory generators to <code>colinhacks/zod</code> and <code>open-source-parsers/jsoncpp</code>.</li>
+          <li>Evaluate live coding agents (<code>claude-code</code>, <code>codex</code>, <code>gemini-cli</code>) via Harbor.</li>
+          <li>Add automated AST-operator mutation expansion.</li>
+        </ul>
+      </div>
+      <div class="card-accent">
+        <h3>Ready-to-Inspect Deliverables</h3>
+        <ul>
+          <li>Clean modular codebase + 6-page white/orange Streamlit UI (<code>app.py</code>).</li>
+          <li>5 independent Harbor <code>0.25.0</code> task packages with real patches and tests.</li>
+          <li>Complete JSON &amp; Markdown verification evidence in <code>evidence/</code>.</li>
+          <li>Portable <code>FeatureForge_Submission/</code> bundle + 3-minute demo script.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button id="prevBtn" onclick="go(-1)">&larr; Previous</button>
+    <span style="font-size:13px;color:#666666;">Use Left / Right arrow keys or buttons to navigate</span>
+    <button id="nextBtn" class="primary" onclick="go(1)">Next &rarr;</button>
+  </div>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  let idx = 0;
+  function render() {
+    slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+    document.getElementById("counter").textContent = `Slide ${idx + 1} / ${slides.length}`;
+    document.getElementById("prevBtn").disabled = idx === 0;
+    document.getElementById("nextBtn").disabled = idx === slides.length - 1;
+  }
+  function go(delta) {
+    idx = Math.max(0, Math.min(slides.length - 1, idx + delta));
+    render();
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === " ") go(1);
+    if (e.key === "ArrowLeft") go(-1);
+  });
+  render();
+</script>
+</body>
+</html>

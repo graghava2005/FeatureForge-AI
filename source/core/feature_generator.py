@@ -1,0 +1,394 @@
+"""Module B: Feature Opportunity Generator for pallets/click."""
+
+from __future__ import annotations
+
+from dataclasses import asdict, dataclass
+from typing import Any
+
+from core.llm_client import LLMClient
+
+
+@dataclass
+class FeatureProposal:
+    task_id: str
+    slug: str
+    subsystem: str
+    feature_title: str
+    problem_description: str
+    user_requirements: list[str]
+    expected_behaviour: str
+    acceptance_criteria: list[str]
+    technical_implementation_approach: str
+    new_feature_test_scenarios: list[str]
+    regression_test_requirements: list[str]
+    target_files: list[str]
+    probe_symbols: list[str]
+    difficulty: str
+    llm_source: str = "deterministic-baseline"
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+def _baseline_candidates() -> list[FeatureProposal]:
+    """Six structured proposals (1 deliberately redundant to exercise Module C, 5 novel)."""
+    return [
+        # Candidate 0: Intentionally mirrors existing Click capability so Module C rejects it.
+        FeatureProposal(
+            task_id="candidate_existing",
+            slug="deprecated-flag",
+            subsystem="command-metadata",
+            feature_title="Add Deprecation Warning Support to Command and Parameter",
+            problem_description=(
+                "CLI authors need a way to mark commands and options as deprecated so users "
+                "receive runtime warnings and help indicators before removal."
+            ),
+            user_requirements=[
+                "Support a deprecated boolean or string parameter on Command and Parameter.",
+                "Display a deprecation label in generated help text.",
+                "Emit a warning message to stderr when a deprecated command or option is invoked.",
+            ],
+            expected_behaviour=(
+                "Commands and parameters configured with deprecated=True or a string emit a "
+                "deprecation notice and show a deprecated marker in --help."
+            ),
+            acceptance_criteria=[
+                "Command(deprecated=True) prints deprecation warning to stderr on invoke.",
+                "Option(..., deprecated='use --new') marks option as deprecated in help output.",
+            ],
+            technical_implementation_approach=(
+                "Add deprecated parameter to Command.__init__ and Parameter.__init__ in src/click/core.py."
+            ),
+            new_feature_test_scenarios=[
+                "Invoke a deprecated command and verify stderr contains DeprecationWarning.",
+            ],
+            regression_test_requirements=[
+                "Existing tests in tests/test_commands.py must continue passing.",
+            ],
+            target_files=["src/click/core.py"],
+            probe_symbols=["deprecated"],
+            difficulty="easy",
+        ),
+        # Feature 1: Option mutual exclusivity & dependency constraints
+        FeatureProposal(
+            task_id="task_01",
+            slug="option-constraints",
+            subsystem="parameter-validation",
+            feature_title="Option Mutual Exclusivity and Dependency Constraints (conflicts_with / requires)",
+            problem_description=(
+                "Click currently lacks declarative cross-option validation on click.Option. "
+                "Developers must manually inspect ctx.params inside command callbacks to reject "
+                "mutually exclusive flags (such as --json vs --csv or --quiet vs --verbose) or to "
+                "enforce paired options (such as --ssl-cert requiring --ssl-key)."
+            ),
+            user_requirements=[
+                "Add optional `conflicts_with` and `requires` keyword arguments (sequences of parameter names) to `click.Option`.",
+                "Validate option constraints in `Command.parse_args` after all parameters are parsed and resolved, skipping validation during `resilient_parsing`.",
+                "Consider an option active/provided for `conflicts_with` only when its `ParameterSource` is `COMMANDLINE` or `ENVIRONMENT` (not `DEFAULT` or `DEFAULT_MAP`).",
+                "For `requires`, when an option is provided via `COMMANDLINE` or `ENVIRONMENT`, raise `click.UsageError` if any required partner parameter was not supplied via `COMMANDLINE`, `ENVIRONMENT`, `DEFAULT_MAP`, or a truthy/non-None `DEFAULT`.",
+                "Accept both Python parameter names (e.g. `'ssl_key'`) and CLI option spellings (e.g. `'--ssl-key'`), normalizing leading dashes and hyphens to underscores.",
+                "Expose non-empty `conflicts_with` and `requires` lists in `Option.to_info_dict()` without altering existing keys when unset.",
+            ],
+            expected_behaviour=(
+                "When mutually exclusive options are both explicitly supplied on the CLI or via environment "
+                "variables, Click raises `click.UsageError` with a clear message naming the conflicting options. "
+                "When an option with `requires` is supplied without its required dependency, Click raises "
+                "`click.UsageError` naming the missing required parameter. Unprovided options with default values "
+                "never trigger false conflicts."
+            ),
+            acceptance_criteria=[
+                "AC1: Passing two options linked by `conflicts_with` on the command line fails with exit code 2 and `UsageError`.",
+                "AC2: Passing only one of the mutually exclusive options succeeds even when the partner option has a default value (e.g., boolean flag default=False).",
+                "AC3: Passing an option with `requires=[...]` without supplying all required partners raises `UsageError`.",
+                "AC4: Passing an option with `requires=[...]` together with its required partner (via CLI, envvar, or default_map) succeeds.",
+                "AC5: Constraint violations triggered via environment variables are detected using `ParameterSource.ENVIRONMENT`.",
+                "AC6: `Option.to_info_dict()` includes `conflicts_with` and `requires` when configured and stays backward-compatible when omitted.",
+                "AC7: `--help` and `resilient_parsing=True` bypass constraint errors.",
+            ],
+            technical_implementation_approach=(
+                "Extend `click.Option.__init__` in `src/click/core.py` with `conflicts_with` and `requires`, "
+                "normalizing parameter identifiers via a helper. Update `Option.to_info_dict` conditionally. "
+                "Add `_validate_option_constraints(ctx)` called from `Command.parse_args` when not `ctx.resilient_parsing`."
+            ),
+            new_feature_test_scenarios=[
+                "Mutually exclusive flags and value options raise UsageError when both passed.",
+                "Asymmetric conflicts_with works regardless of option order on CLI.",
+                "Default values do not trigger false mutual-exclusivity errors.",
+                "requires raises UsageError when dependency missing and succeeds when dependency provided via CLI, envvar, or default_map.",
+                "CLI-style '--foo-bar' constraint names normalize to 'foo_bar'.",
+                "Envvar + CLI conflict detection.",
+                "to_info_dict preserves default output and emits constraints when configured.",
+                "--help works even if conflicting options are passed.",
+            ],
+            regression_test_requirements=[
+                "All existing tests in tests/test_options.py, tests/test_defaults.py, and tests/test_info_dict.py must pass.",
+            ],
+            target_files=["src/click/core.py"],
+            probe_symbols=["conflicts_with", "requires"],
+            difficulty="medium",
+        ),
+        # Feature 2: Command and subcommand aliases
+        FeatureProposal(
+            task_id="task_02",
+            slug="command-aliases",
+            subsystem="command-routing",
+            feature_title="Command and Subcommand Aliases in Group Dispatch and Help Output",
+            problem_description=(
+                "In multi-command CLIs built with `click.Group`, developers frequently want short "
+                "aliases for common subcommands (for example `co` for `checkout` or `rm` for `remove`) "
+                "without subclassing `Group` or duplicating command registrations."
+            ),
+            user_requirements=[
+                "Add an optional `aliases: cabc.Sequence[str] | None = None` parameter to `click.Command.__init__` (inherited by `Group` and forwarded automatically by `@click.command` and `@group.command`).",
+                "Store normalized unique aliases as a tuple on `cmd.aliases`.",
+                "Extend `Group.add_command` to reject alias collisions against existing command names or aliases in the group with `ValueError`.",
+                "Update `Group.resolve_command` so invoking an alias resolves to the canonical command and sets `cmd_name` to the canonical registered command name (respecting `ctx.token_normalize_func`).",
+                "Update `Group.format_commands` so commands with aliases display as `name (alias1, alias2)` in the `--help` Commands section.",
+                "Include `aliases` in `Command.to_info_dict()` only when `self.aliases` is non-empty.",
+            ],
+            expected_behaviour=(
+                "Subcommands registered with `aliases=['co', 'chk']` can be invoked by their canonical name or "
+                "any alias, executing with `ctx.info_name` / `ctx.invoked_subcommand` set to the canonical name. "
+                "`--help` lists aliases next to the command name, and duplicate/colliding aliases raise `ValueError` at registration."
+            ),
+            acceptance_criteria=[
+                "AC1: `@group.command(aliases=['d', 'dep'])` allows invoking the command via `cli d` and `cli dep`.",
+                "AC2: Invoking via an alias sets `ctx.invoked_subcommand` and `ctx.info_name` to the canonical command name.",
+                "AC3: `Group --help` renders aliases in parentheses next to the canonical command name.",
+                "AC4: Registering a command whose alias collides with an existing command name or alias raises `ValueError`.",
+                "AC5: Chained groups (`chain=True`) resolve aliased subcommands in sequence.",
+                "AC6: `token_normalize_func` applies cleanly when matching aliases case-insensitively.",
+                "AC7: `Command.to_info_dict()` remains backward-compatible when aliases are unset and includes `aliases` when set.",
+            ],
+            technical_implementation_approach=(
+                "Add `aliases` to `Command.__init__` in `src/click/core.py`. Update `Group.add_command` to validate "
+                "alias uniqueness, `Group._resolve_alias` + `Group.resolve_command` to map aliases to canonical names, "
+                "and `Group.format_commands` to format `name (a1, a2)`."
+            ),
+            new_feature_test_scenarios=[
+                "Invoke subcommand using multiple aliases and canonical name.",
+                "Verify ctx.invoked_subcommand and ctx.info_name resolve to canonical command name.",
+                "Verify Group --help output formats aliases and accounts for column width.",
+                "Verify ValueError on alias collision with existing command or alias.",
+                "Verify chained group invocation with aliases.",
+                "Verify case-insensitive alias matching via token_normalize_func.",
+                "Verify unknown command still raises NoSuchCommand.",
+            ],
+            regression_test_requirements=[
+                "All existing tests in tests/test_commands.py, tests/test_chain.py, tests/test_normalization.py, and tests/test_info_dict.py must pass.",
+            ],
+            target_files=["src/click/core.py"],
+            probe_symbols=["aliases"],
+            difficulty="medium",
+        ),
+        # Feature 3: ByteSize ParamType
+        FeatureProposal(
+            task_id="task_03",
+            slug="bytesize-type",
+            subsystem="parameter-types",
+            feature_title="Human-Readable ByteSize Parameter Type (click.ByteSize)",
+            problem_description=(
+                "CLIs often accept memory limits, cache quotas, or file size thresholds such as "
+                "'512MB', '1.5GiB', or '64K'. Click provides IntRange and FloatRange, but has no "
+                "built-in ParamType to parse human-readable byte-size strings into integer byte counts."
+            ),
+            user_requirements=[
+                "Implement `ByteSize(ParamType[int])` in `src/click/types.py` and export `ByteSize` in `src/click/__init__.py`.",
+                "Support `min: int | None = None`, `max: int | None = None`, and `binary: bool = True` constructor arguments (validating that `min` and `max` are non-negative and `min <= max` when both set).",
+                "Parse integer and decimal values with optional whitespace and case-insensitive suffixes: `B`, `K`/`KB`/`KiB`, `M`/`MB`/`MiB`, `G`/`GB`/`GiB`, `T`/`TB`/`TiB`, `P`/`PB`/`PiB`.",
+                "When `binary=True`, use powers of 1024 for both short/SI-style (`KB`, `MB`, `GB`, ...) and IEC (`KiB`, `MiB`, `GiB`, ...) suffixes. When `binary=False`, use powers of 1000 for `K`/`KB`/`M`/`MB`... while always using powers of 1024 for explicit IEC (`KiB`, `MiB`, ...).",
+                "Accept pre-converted non-bool `int` values directly while rejecting `bool`, negative numbers, NaN/Inf, empty strings, or invalid units via `self.fail(...)`.",
+                "Enforce inclusive `min` and `max` bounds and implement `get_metavar` and `to_info_dict`.",
+            ],
+            expected_behaviour=(
+                "CLI options and arguments typed with `click.ByteSize()` convert strings like `'10MiB'`, `'2.5 GB'`, "
+                "or `'4096'` into exact integer byte counts, reject out-of-range or malformed inputs with `BadParameter`, "
+                "and expose clean metadata via `to_info_dict()` and `get_metavar()`."
+            ),
+            acceptance_criteria=[
+                "AC1: Plain integers ('1024', 2048) and byte suffix ('512B') convert to exact integer byte counts.",
+                "AC2: Binary mode (`binary=True`) converts `'2K'`, `'2KB'`, `'2KiB'` to 2048 and `'1.5MiB'` to 1572864.",
+                "AC3: Decimal SI mode (`binary=False`) converts `'2KB'` to 2000 and `'2MB'` to 2000000 while `'2KiB'` stays 2048.",
+                "AC4: Whitespace and mixed casing (`' 4 gib '`, `'10m'`) are parsed accurately.",
+                "AC5: `min` and `max` bounds reject values outside range with `BadParameter`.",
+                "AC6: Booleans, negative numbers, `'NaN'`, `'inf'`, empty strings, and unknown units like `'10XB'` fail with `BadParameter`.",
+                "AC7: `click.ByteSize` is exported from top-level `click` and implements `to_info_dict()` and `get_metavar()`.",
+            ],
+            technical_implementation_approach=(
+                "Add `ByteSizeInfoDict` and `ByteSize(ParamType[int])` in `src/click/types.py` using a compiled regex "
+                "and explicit IEC/SI multiplier tables. Export `ByteSize` in `src/click/__init__.py`."
+            ),
+            new_feature_test_scenarios=[
+                "IEC binary parsing for B, K/KB/KiB, M/MB/MiB, G/GB/GiB, T/TB/TiB, P/PB/PiB.",
+                "SI decimal parsing with binary=False vs explicit IEC suffix.",
+                "Fractional sizes like '1.5KiB' and '0.5MB' with whitespace and case-insensitivity.",
+                "min and max boundary enforcement on both string and int inputs.",
+                "Rejection of booleans, negative values, empty strings, NaN/inf, and invalid suffixes.",
+                "Full CLI integration with @click.command and @click.option(type=click.ByteSize(...)).",
+                "to_info_dict and get_metavar output validation.",
+            ],
+            regression_test_requirements=[
+                "All existing tests in tests/test_types/ and tests/test_info_dict.py must pass.",
+            ],
+            target_files=["src/click/types.py", "src/click/__init__.py"],
+            probe_symbols=["ByteSize"],
+            difficulty="medium",
+        ),
+        # Feature 4: NO_COLOR & FORCE_COLOR support
+        FeatureProposal(
+            task_id="task_04",
+            slug="no-color-env",
+            subsystem="terminal-color",
+            feature_title="Standard NO_COLOR and FORCE_COLOR Environment Variable Resolution",
+            problem_description=(
+                "Modern CLI tools are expected to honor the cross-tool NO_COLOR (no-color.org) and "
+                "FORCE_COLOR standards automatically. Currently Click only checks stream.isatty() when "
+                "color=None, ignoring NO_COLOR and FORCE_COLOR environment variables."
+            ),
+            user_requirements=[
+                "Update `resolve_color_default(color: bool | None = None)` in `src/click/globals.py` and `should_strip_ansi` in `src/click/_compat.py` to honor `NO_COLOR` and `FORCE_COLOR`.",
+                "Preserve precedence: explicit `color=True`/`color=False` argument > explicit `ctx.color` (`True`/`False`) > `NO_COLOR` > `FORCE_COLOR` > TTY auto-detection.",
+                "Per no-color.org, any non-empty `NO_COLOR` environment variable (`os.environ.get('NO_COLOR', '') != ''`) disables ANSI color when `color` and `ctx.color` are `None`.",
+                "When `NO_COLOR` is unset or empty, a non-empty `FORCE_COLOR` value other than `'0'` (case-insensitive `'false'` also treated as off) enables ANSI color even on non-TTY streams.",
+                "Ensure `NO_COLOR` takes precedence over `FORCE_COLOR` if both are set.",
+            ],
+            expected_behaviour=(
+                "When `NO_COLOR=1` is present in the environment and neither `color` nor `ctx.color` is explicitly set, "
+                "`click.echo` / `click.secho` strip ANSI codes even for TTY streams. When `FORCE_COLOR=1` is set (and `NO_COLOR` "
+                "is empty/unset), `click.echo` / `click.secho` preserve ANSI codes even when writing to non-TTY streams like `StringIO` or `CliRunner`. "
+                "Explicit `color=True` or `color=False` always wins."
+            ),
+            acceptance_criteria=[
+                "AC1: With `NO_COLOR=1`, `resolve_color_default()` returns `False` and `should_strip_ansi(tty_stream)` returns `True`.",
+                "AC2: With `NO_COLOR=''` (empty string), `NO_COLOR` has no effect per the no-color.org spec.",
+                "AC3: With `FORCE_COLOR=1` and no `NO_COLOR`, `resolve_color_default()` returns `True` and `click.secho` preserves ANSI escapes on non-TTY streams.",
+                "AC4: With `FORCE_COLOR='0'` or `FORCE_COLOR='false'`, color is not forced.",
+                "AC5: When both `NO_COLOR=1` and `FORCE_COLOR=1` are set, `NO_COLOR` wins and strips ANSI codes.",
+                "AC6: Explicit `color=True` overrides `NO_COLOR=1`, and explicit `color=False` overrides `FORCE_COLOR=1`.",
+                "AC7: Explicit `ctx.color=True` / `ctx.color=False` overrides environment variables.",
+            ],
+            technical_implementation_approach=(
+                "Add a shared helper `_resolve_env_color()` in `src/click/_compat.py` (or `src/click/globals.py` and import), "
+                "used by both `resolve_color_default` and `should_strip_ansi` when `color is None`."
+            ),
+            new_feature_test_scenarios=[
+                "NO_COLOR=1 strips ANSI output in echo/secho and CliRunner(color=None) or TTY mock.",
+                "Empty NO_COLOR='' leaves TTY auto-detection intact.",
+                "FORCE_COLOR=1 preserves ANSI codes in StringIO and CliRunner.",
+                "FORCE_COLOR='0' does not force color.",
+                "NO_COLOR overrides FORCE_COLOR when both set.",
+                "Explicit color=True/False and ctx.color=True/False override env vars.",
+            ],
+            regression_test_requirements=[
+                "All existing tests in tests/test_basic.py, tests/test_termui.py, tests/test_compat.py, and tests/test_context.py must pass.",
+            ],
+            target_files=["src/click/globals.py", "src/click/_compat.py"],
+            probe_symbols=["NO_COLOR", "FORCE_COLOR"],
+            difficulty="medium",
+        ),
+        # Feature 5: Terminal Table Printer (echo_table / format_table)
+        FeatureProposal(
+            task_id="task_05",
+            slug="echo-table",
+            subsystem="terminal-ui",
+            feature_title="ANSI-Aware Terminal Table Formatting and Output (format_table / echo_table)",
+            problem_description=(
+                "Click provides HelpFormatter.write_dl for two-column option lists, echo, style, and progressbar, "
+                "but lacks a general-purpose tabular formatter for multi-column CLI output that respects ANSI escape "
+                "widths, column alignments, borders, and truncation."
+            ),
+            user_requirements=[
+                "Implement `format_table` and `echo_table` in `src/click/termui.py` and export both in `src/click/__init__.py`.",
+                "Support `rows`, optional `headers`, `align` (`'left'`, `'right'`, `'center'`, or a per-column sequence), `border` (`'plain'`, `'simple'`, `'grid'`), `max_col_width: int | None = None`, and `padding: int = 1`.",
+                "Use `click._compat.term_len` for width calculation so ANSI-styled cells align properly.",
+                "Render `None` cells as empty strings `''` and normalize ragged rows to the maximum column count.",
+                "Truncate unstyled text exceeding `max_col_width` with `'...'` (or exact slice when `max_col_width <= 3`), preserving ANSI-safe truncation via `unstyle` if needed.",
+                "Validate `border`, `align`, `max_col_width` (< 1 raises `ValueError`), and `padding` (< 0 raises `ValueError`).",
+                "`echo_table` forwards formatted text to `click.echo(..., file=file, nl=nl, err=err, color=color)`.",
+            ],
+            expected_behaviour=(
+                "`click.format_table` returns deterministically aligned multi-column tables across `plain`, `simple`, "
+                "and `grid` border styles, handles ANSI escape codes without misaligning columns, handles empty inputs "
+                "cleanly, and `click.echo_table` prints the table through Click's echo pipeline (honoring `color` and streams)."
+            ),
+            acceptance_criteria=[
+                "AC1: `format_table` renders `'simple'` (default) with header, dashed separator line, and aligned data rows.",
+                "AC2: `format_table` renders `'plain'` without separator lines and `'grid'` with `+---+` borders and `| cell |` pipes.",
+                "AC3: `align` supports single string and per-column sequences (`['left', 'right', 'center']`).",
+                "AC4: Cells containing `click.style(...)` ANSI codes align visually with unstyled cells using `term_len`.",
+                "AC5: Ragged rows and `None` cells pad cleanly without raising IndexError.",
+                "AC6: `max_col_width` truncates overly long cell values with `'...'` and raises `ValueError` if `< 1`.",
+                "AC7: Invalid `border`, invalid `align`, or `padding < 0` raises `ValueError`.",
+                "AC8: `click.echo_table` prints to `CliRunner` / custom `StringIO` stream and strips ANSI when `color=False`.",
+            ],
+            technical_implementation_approach=(
+                "Add `format_table` and `echo_table` in `src/click/termui.py` reusing `term_len` and `strip_ansi` "
+                "from `._compat` and `echo` from `.utils`. Export both in `src/click/__init__.py`."
+            ),
+            new_feature_test_scenarios=[
+                "Simple, plain, and grid border rendering.",
+                "Left, right, center, and mixed per-column alignment.",
+                "ANSI-styled cells alignment and echo_table color=False stripping.",
+                "Ragged rows, None cells, empty rows with headers, empty rows without headers.",
+                "max_col_width truncation and validation errors for invalid args.",
+                "CliRunner integration test for CLI command using click.echo_table.",
+            ],
+            regression_test_requirements=[
+                "All existing tests in tests/test_termui.py and tests/test_imports.py must pass.",
+            ],
+            target_files=["src/click/termui.py", "src/click/__init__.py"],
+            probe_symbols=["echo_table", "format_table"],
+            difficulty="medium",
+        ),
+    ]
+
+
+class FeatureGenerator:
+    """Module B: Produces 5 distinct novel feature proposals (plus rejected duplicates/existing)."""
+
+    def __init__(self, llm_client: LLMClient | None = None) -> None:
+        self.llm = llm_client or LLMClient(enabled=True)
+
+    def generate_candidates(
+        self,
+        repo_analysis: dict[str, Any],
+        use_llm_enrichment: bool = False,
+    ) -> dict[str, Any]:
+        candidates = _baseline_candidates()
+        llm_status = self.llm.status()
+
+        if use_llm_enrichment and llm_status.available:
+            # Optional LLM enrichment of problem_description / rationale for novel candidates
+            for cand in candidates:
+                if cand.task_id == "candidate_existing":
+                    continue
+                payload, source_tag = self.llm.complete_json(
+                    system_prompt=(
+                        "You are a senior Python CLI architect refining a feature specification "
+                        "for pallets/click. Return JSON with keys: problem_description (string) "
+                        "and expected_behaviour (string). Keep technical APIs exact."
+                    ),
+                    user_prompt=(
+                        f"Repository: {repo_analysis.get('repository')} "
+                        f"at commit {repo_analysis.get('git_verification', {}).get('head_sha')}.\n"
+                        f"Feature: {cand.feature_title}\n"
+                        f"Requirements: {cand.user_requirements}\n"
+                        f"Current problem description: {cand.problem_description}"
+                    ),
+                    fallback_payload={
+                        "problem_description": cand.problem_description,
+                        "expected_behaviour": cand.expected_behaviour,
+                    },
+                )
+                if payload.get("problem_description"):
+                    cand.problem_description = str(payload["problem_description"])
+                if payload.get("expected_behaviour"):
+                    cand.expected_behaviour = str(payload["expected_behaviour"])
+                cand.llm_source = source_tag
+
+        return {
+            "llm_provider": llm_status.provider,
+            "llm_model": llm_status.model,
+            "llm_reason": llm_status.reason,
+            "candidates": [c.to_dict() for c in candidates],
+        }

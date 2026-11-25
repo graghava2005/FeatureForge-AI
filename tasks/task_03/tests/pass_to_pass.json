@@ -1,0 +1,4 @@
+[
+  "tests/test_types/",
+  "tests/test_info_dict.py"
+]

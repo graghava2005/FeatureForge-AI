@@ -1,0 +1,9 @@
+[
+  "test_feature_echo_table.py::test_format_table_simple_default_and_alignment",
+  "test_feature_echo_table.py::test_format_table_plain_and_grid_borders",
+  "test_feature_echo_table.py::test_format_table_ansi_aware_alignment",
+  "test_feature_echo_table.py::test_format_table_ragged_rows_none_and_empty",
+  "test_feature_echo_table.py::test_format_table_max_col_width_truncation",
+  "test_feature_echo_table.py::test_format_table_invalid_arguments",
+  "test_feature_echo_table.py::test_echo_table_stream_and_cli_runner"
+]

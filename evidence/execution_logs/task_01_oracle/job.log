@@ -1,0 +1,13 @@
+Agent 'oracle' does not declare an options_model; leftover kwargs are ignored
+Collecting main service artifacts
+Failed to download artifact '/logs/artifacts' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\Lib\site-packages\harbor\trial\artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\Lib\site-packages\harbor\environments\base.py", line 1458, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\G Raghava\Desktop\FEATUREFORGE AI\core\harbor_local_env.py", line 105, in download_file
+    raise FileNotFoundError(f"Sandbox file not found: {src}")
+FileNotFoundError: Sandbox file not found: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_01__jXEnmS2__env_uevmax8t\logs\artifacts

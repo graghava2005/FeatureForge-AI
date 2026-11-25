@@ -1,0 +1,2917 @@
+{
+  "repository": "pallets/click",
+  "repo_path": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\repos\\click",
+  "git_verification": {
+    "head_sha": "08b803cf32ceb2ae6a772c62d5da42757a897d44",
+    "matches_expected_base_commit": true,
+    "expected_base_commit": "08b803cf32ceb2ae6a772c62d5da42757a897d44",
+    "is_clean_working_tree": true,
+    "dirty_files": [],
+    "branch": "main",
+    "commit_subject": "Python 3.11 cleanups (#3921)",
+    "commit_date": "2026-11-16T09:03:40-08:00"
+  },
+  "git_recent_commits": [
+    {
+      "sha": "08b803cf32ceb2ae6a772c62d5da42757a897d44",
+      "date": "2026-11-16T09:03:40-08:00",
+      "author": "Rowlando13",
+      "subject": "Python 3.11 cleanups (#3921)"
+    },
+    {
+      "sha": "34e513b402804d0ab489b586ab3d7eb90a261bda",
+      "date": "2026-11-16T14:22:16+04:00",
+      "author": "Kevin Deldycke",
+      "subject": "Drop `Sentinel.__copy__` and `__deepcopy__`, test its `object()` values"
+    },
+    {
+      "sha": "884772088134d701385458a99bb6da0a5bb80d42",
+      "date": "2026-11-14T14:56:29+04:00",
+      "author": "Kevin Deldycke",
+      "subject": "Use `t.Self` and `catch_warnings()` filter arguments"
+    },
+    {
+      "sha": "e38188e9e205005d5af5f9e59df51904c984586a",
+      "date": "2026-11-12T08:38:08-08:00",
+      "author": "Rowlando13",
+      "subject": "Drop support for Python 3.10 (#3920)"
+    },
+    {
+      "sha": "8d0cd41bb5c36b792cc3a22d2c668472b8b9b079",
+      "date": "2026-11-12T08:33:05-08:00",
+      "author": "Rowlando13",
+      "subject": "The parameter receives an open file object, not a path (#3918)"
+    },
+    {
+      "sha": "a46a95c733d0ed72f63cd2915f2bc4a09a7179f9",
+      "date": "2026-11-12T08:28:54-08:00",
+      "author": "Rowlando13",
+      "subject": "Help pages no longer break a line within a hyphenated word (#3902)"
+    },
+    {
+      "sha": "a2b9b2f29580aa253fdbc210718f047a1e98b916",
+      "date": "2026-11-12T16:59:21+04:00",
+      "author": "Kevin Deldycke",
+      "subject": "Drop support for Python 3.10"
+    },
+    {
+      "sha": "cad975587f91ca2c9dde0ccaaaa75aa33a39554c",
+      "date": "2026-11-12T14:29:41+04:00",
+      "author": "Kevin Deldycke",
+      "subject": "The parameter receives an open file object, not a path"
+    },
+    {
+      "sha": "7996a89c5a4ce1c451e2e1c9c5a00eb0c844d4ce",
+      "date": "2026-11-12T13:00:57+04:00",
+      "author": "Kevin Deldycke",
+      "subject": "Help pages no longer break a line within a hyphenated word"
+    },
+    {
+      "sha": "8abb77a8432e03ed14a95f972b44f905279415a7",
+      "date": "2026-11-06T09:58:14-08:00",
+      "author": "Rowlando13",
+      "subject": "Merge stable into main (#3911)"
+    },
+    {
+      "sha": "2e2fcd59e6873d9eb6f302b93f951f276634f76b",
+      "date": "2026-11-06T09:56:04-08:00",
+      "author": "Rowlando13",
+      "subject": "Document Click UI scope and direction (#3898)"
+    },
+    {
+      "sha": "fdb65f4809719580436acb067410cec64433e5de",
+      "date": "2026-11-06T09:50:06-08:00",
+      "author": "Rowlando13",
+      "subject": "Add `context_settings` parameter to `CliRunner.invoke` (#3896)"
+    },
+    {
+      "sha": "e57387dc36b03720a3fa721f46f60700e1e8e345",
+      "date": "2026-11-06T09:49:02-08:00",
+      "author": "Rowlando13",
+      "subject": "Add Python 3.15 to the test matrix (#3909)"
+    },
+    {
+      "sha": "dd149eb3129d887a22202c3fafa5ceb0e0d7018d",
+      "date": "2026-11-06T09:48:11-08:00",
+      "author": "Rowlando13",
+      "subject": "Merge stable into main (#3910)"
+    },
+    {
+      "sha": "831a687bc823391fa9897536081e0f81b0f7057b",
+      "date": "2026-11-06T09:45:05-08:00",
+      "author": "Rowlando13",
+      "subject": "Merge branch 'main' into stable"
+    }
+  ],
+  "source_analysis": {
+    "top_level_dirs": [
+      "docs",
+      "examples",
+      "src",
+      "tests"
+    ],
+    "top_level_files": [
+      ".editorconfig",
+      ".gitignore",
+      ".pre-commit-config.yaml",
+      ".readthedocs.yaml",
+      "CHANGES.md",
+      "LICENSE.txt",
+      "README.md",
+      "pyproject.toml",
+      "uv.lock"
+    ],
+    "source_module_count": 17,
+    "total_source_lines": 12823,
+    "modules": [
+      {
+        "relative_path": "src/click/__init__.py",
+        "line_count": 144,
+        "classes": [],
+        "functions": [
+          "__getattr__"
+        ],
+        "imports": [
+          "__future__",
+          "core",
+          "decorators",
+          "exceptions",
+          "formatting",
+          "globals",
+          "termui",
+          "types",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/_compat.py",
+        "line_count": 590,
+        "classes": [
+          {
+            "name": "_NonClosingTextIOWrapper",
+            "methods": [
+              "__init__",
+              "__del__",
+              "isatty"
+            ],
+            "init_params": [
+              "stream",
+              "encoding",
+              "errors",
+              "force_readable",
+              "force_writable"
+            ],
+            "bases": [
+              "io.TextIOWrapper"
+            ]
+          },
+          {
+            "name": "_FixupStream",
+            "methods": [
+              "__init__",
+              "__getattr__",
+              "read1",
+              "readable",
+              "writable",
+              "seekable"
+            ],
+            "init_params": [
+              "stream",
+              "force_readable",
+              "force_writable"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_AtomicFile",
+            "methods": [
+              "__init__",
+              "name",
+              "close",
+              "__getattr__",
+              "__enter__",
+              "__exit__",
+              "__repr__"
+            ],
+            "init_params": [
+              "f",
+              "tmp_filename",
+              "real_filename"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "_make_text_stream",
+          "is_ascii_encoding",
+          "get_best_encoding",
+          "_is_binary_reader",
+          "_is_binary_writer",
+          "_find_binary_reader",
+          "_find_binary_writer",
+          "_stream_is_misconfigured",
+          "_is_compat_stream_attr",
+          "_is_compatible_text_stream",
+          "_force_correct_text_stream",
+          "_force_correct_text_reader",
+          "_force_correct_text_writer",
+          "get_binary_stdin",
+          "get_binary_stdout",
+          "get_binary_stderr",
+          "get_text_stdin",
+          "get_text_stdout",
+          "get_text_stderr",
+          "_wrap_io_open",
+          "open_stream",
+          "strip_ansi",
+          "_is_jupyter_kernel_output",
+          "should_strip_ansi",
+          "term_len",
+          "isatty",
+          "_make_cached_stream_func"
+        ],
+        "imports": [
+          "__future__",
+          "codecs",
+          "collections.abc",
+          "io",
+          "os",
+          "re",
+          "sys",
+          "types",
+          "typing",
+          "weakref"
+        ]
+      },
+      {
+        "relative_path": "src/click/_termui_impl.py",
+        "line_count": 970,
+        "classes": [
+          {
+            "name": "ProgressBar",
+            "methods": [
+              "__init__",
+              "__enter__",
+              "__exit__",
+              "__iter__",
+              "__next__",
+              "render_finish",
+              "pct",
+              "time_per_iteration",
+              "eta",
+              "format_eta",
+              "format_pos",
+              "format_pct",
+              "format_bar",
+              "format_progress_line",
+              "render_progress",
+              "make_step",
+              "update",
+              "finish",
+              "generator"
+            ],
+            "init_params": [
+              "iterable",
+              "length",
+              "fill_char",
+              "empty_char",
+              "bar_template",
+              "info_sep",
+              "hidden",
+              "show_eta",
+              "show_percent",
+              "show_pos",
+              "item_show_func",
+              "label",
+              "file",
+              "color",
+              "update_min_steps",
+              "width"
+            ],
+            "bases": [
+              "t.Generic[V]"
+            ]
+          },
+          {
+            "name": "_PagerWriter",
+            "methods": [
+              "__init__",
+              "write",
+              "writelines",
+              "flush",
+              "close",
+              "__getattr__"
+            ],
+            "init_params": [
+              "stream",
+              "color"
+            ],
+            "bases": []
+          },
+          {
+            "name": "Editor",
+            "methods": [
+              "__init__",
+              "get_editor",
+              "edit_files",
+              "edit",
+              "edit",
+              "edit"
+            ],
+            "init_params": [
+              "editor",
+              "env",
+              "require_save",
+              "extension"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "_resolve_pager_command",
+          "_pager_contextmanager",
+          "get_pager_file",
+          "_less_uses_raw_mode",
+          "_pipepager",
+          "_tempfilepager",
+          "_nullpager",
+          "open_url",
+          "_translate_ch_to_exc"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "contextlib",
+          "exceptions",
+          "gettext",
+          "io",
+          "math",
+          "os",
+          "pathlib",
+          "shlex",
+          "sys",
+          "time",
+          "types",
+          "typing",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/_textwrap.py",
+        "line_count": 102,
+        "classes": [
+          {
+            "name": "TextWrapper",
+            "methods": [
+              "_wrap_chunks",
+              "extra_indent",
+              "indent_only"
+            ],
+            "init_params": [],
+            "bases": [
+              "textwrap.TextWrapper"
+            ]
+          }
+        ],
+        "functions": [],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "contextlib",
+          "textwrap"
+        ]
+      },
+      {
+        "relative_path": "src/click/_utils.py",
+        "line_count": 39,
+        "classes": [
+          {
+            "name": "Sentinel",
+            "methods": [
+              "__repr__",
+              "__reduce_ex__"
+            ],
+            "init_params": [],
+            "bases": [
+              "enum.Enum"
+            ]
+          }
+        ],
+        "functions": [],
+        "imports": [
+          "__future__",
+          "enum",
+          "typing"
+        ]
+      },
+      {
+        "relative_path": "src/click/_winconsole.py",
+        "line_count": 292,
+        "classes": [
+          {
+            "name": "_WindowsConsoleRawIOBase",
+            "methods": [
+              "__init__",
+              "isatty"
+            ],
+            "init_params": [
+              "handle"
+            ],
+            "bases": [
+              "io.RawIOBase"
+            ]
+          },
+          {
+            "name": "_WindowsConsoleReader",
+            "methods": [
+              "readable",
+              "readinto"
+            ],
+            "init_params": [],
+            "bases": [
+              "_WindowsConsoleRawIOBase"
+            ]
+          },
+          {
+            "name": "_WindowsConsoleWriter",
+            "methods": [
+              "writable",
+              "_get_error_message",
+              "write"
+            ],
+            "init_params": [],
+            "bases": [
+              "_WindowsConsoleRawIOBase"
+            ]
+          },
+          {
+            "name": "ConsoleStream",
+            "methods": [
+              "__init__",
+              "name",
+              "write",
+              "writelines",
+              "__getattr__",
+              "isatty",
+              "__repr__"
+            ],
+            "init_params": [
+              "text_stream",
+              "byte_stream"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "_get_text_stdin",
+          "_get_text_stdout",
+          "_get_text_stderr",
+          "_is_console",
+          "_get_windows_console_stream"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "ctypes",
+          "ctypes.wintypes",
+          "gettext",
+          "io",
+          "msvcrt",
+          "sys",
+          "time",
+          "typing"
+        ]
+      },
+      {
+        "relative_path": "src/click/core.py",
+        "line_count": 4018,
+        "classes": [
+          {
+            "name": "ParameterSource",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "enum.IntEnum"
+            ]
+          },
+          {
+            "name": "Context",
+            "methods": [
+              "__init__",
+              "protected_args",
+              "to_info_dict",
+              "__enter__",
+              "__exit__",
+              "scope",
+              "meta",
+              "make_formatter",
+              "with_resource",
+              "call_on_close",
+              "close",
+              "_close_with_exception_info",
+              "command_path",
+              "find_root",
+              "find_object",
+              "ensure_object",
+              "_default_map_has",
+              "lookup_default",
+              "lookup_default",
+              "lookup_default",
+              "fail",
+              "abort",
+              "exit",
+              "get_usage",
+              "get_help",
+              "_make_sub_context",
+              "invoke",
+              "invoke",
+              "invoke",
+              "forward",
+              "set_parameter_source",
+              "get_parameter_source"
+            ],
+            "init_params": [
+              "command",
+              "parent",
+              "info_name",
+              "obj",
+              "auto_envvar_prefix",
+              "default_map",
+              "terminal_width",
+              "max_content_width",
+              "resilient_parsing",
+              "allow_extra_args",
+              "allow_interspersed_args",
+              "ignore_unknown_options",
+              "help_option_names",
+              "token_normalize_func",
+              "color",
+              "show_default"
+            ],
+            "bases": []
+          },
+          {
+            "name": "Command",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "__repr__",
+              "get_usage",
+              "get_params",
+              "format_usage",
+              "collect_usage_pieces",
+              "get_help_option_names",
+              "get_help_option",
+              "make_parser",
+              "get_help",
+              "get_short_help_str",
+              "format_help",
+              "format_help_text",
+              "format_options",
+              "format_arguments",
+              "format_epilog",
+              "make_context",
+              "parse_args",
+              "invoke",
+              "shell_complete",
+              "main",
+              "main",
+              "main",
+              "_main_shell_completion",
+              "__call__"
+            ],
+            "init_params": [
+              "name",
+              "context_settings",
+              "callback",
+              "params",
+              "help",
+              "epilog",
+              "short_help",
+              "options_metavar",
+              "add_help_option",
+              "no_args_is_help",
+              "hidden",
+              "deprecated"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_FakeSubclassCheck",
+            "methods": [
+              "__subclasscheck__",
+              "__instancecheck__"
+            ],
+            "init_params": [],
+            "bases": [
+              "type"
+            ]
+          },
+          {
+            "name": "_BaseCommand",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "Command"
+            ]
+          },
+          {
+            "name": "Group",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "add_command",
+              "command",
+              "command",
+              "command",
+              "group",
+              "group",
+              "group",
+              "result_callback",
+              "get_command",
+              "list_commands",
+              "collect_usage_pieces",
+              "format_options",
+              "format_commands",
+              "parse_args",
+              "invoke",
+              "resolve_command",
+              "shell_complete"
+            ],
+            "init_params": [
+              "name",
+              "commands",
+              "invoke_without_command",
+              "no_args_is_help",
+              "subcommand_metavar",
+              "chain",
+              "result_callback"
+            ],
+            "bases": [
+              "Command"
+            ]
+          },
+          {
+            "name": "_MultiCommand",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "Group"
+            ]
+          },
+          {
+            "name": "CommandCollection",
+            "methods": [
+              "__init__",
+              "add_source",
+              "get_command",
+              "list_commands"
+            ],
+            "init_params": [
+              "name",
+              "sources"
+            ],
+            "bases": [
+              "Group"
+            ]
+          },
+          {
+            "name": "Parameter",
+            "methods": [
+              "__init_subclass__",
+              "__init__",
+              "_hide_unset",
+              "to_info_dict",
+              "__repr__",
+              "_parse_decls",
+              "_check_name_is_usable",
+              "spec",
+              "human_readable_name",
+              "get_help_spec",
+              "make_metavar",
+              "get_default",
+              "get_default",
+              "get_default",
+              "add_to_parser",
+              "consume_value",
+              "type_cast_value",
+              "value_is_missing",
+              "process_value",
+              "resolve_envvar_value",
+              "value_from_envvar",
+              "handle_parse_result",
+              "get_help_record",
+              "get_usage_pieces",
+              "get_error_hint",
+              "shell_complete"
+            ],
+            "init_params": [
+              "param_decls",
+              "type",
+              "required",
+              "default",
+              "callback",
+              "nargs",
+              "multiple",
+              "metavar",
+              "expose_value",
+              "is_eager",
+              "envvar",
+              "shell_complete",
+              "deprecated",
+              "help"
+            ],
+            "bases": [
+              "ABC"
+            ]
+          },
+          {
+            "name": "Option",
+            "methods": [
+              "__init__",
+              "is_bool_flag",
+              "flag_activation_value",
+              "_infer_flag_kind",
+              "_pick_type",
+              "_resolve_lazy_default",
+              "_validate",
+              "to_info_dict",
+              "get_default",
+              "get_error_hint",
+              "_check_name_is_normalized",
+              "_parse_decls",
+              "add_to_parser",
+              "get_help_spec",
+              "get_help_record",
+              "get_help_extra",
+              "prompt_for_value",
+              "resolve_envvar_value",
+              "value_from_envvar",
+              "consume_value",
+              "process_value"
+            ],
+            "init_params": [
+              "param_decls",
+              "show_default",
+              "prompt",
+              "confirmation_prompt",
+              "prompt_required",
+              "hide_input",
+              "is_flag",
+              "flag_value",
+              "multiple",
+              "count",
+              "allow_from_autoenv",
+              "type",
+              "help",
+              "hidden",
+              "show_choices",
+              "show_envvar",
+              "deprecated"
+            ],
+            "bases": [
+              "Parameter"
+            ]
+          },
+          {
+            "name": "Argument",
+            "methods": [
+              "__init__",
+              "spec",
+              "make_metavar",
+              "_parse_decls",
+              "get_usage_pieces",
+              "get_help_spec",
+              "get_help_record",
+              "get_error_hint",
+              "add_to_parser"
+            ],
+            "init_params": [
+              "param_decls",
+              "required",
+              "help"
+            ],
+            "bases": [
+              "Parameter"
+            ]
+          }
+        ],
+        "functions": [
+          "_complete_visible_commands",
+          "_check_nested_chain",
+          "_echo_aborted",
+          "_outside_click_stacklevel",
+          "_format_deprecated_label",
+          "_format_deprecated_suffix",
+          "batch",
+          "augment_usage_errors",
+          "iter_params_for_processing",
+          "_check_iter",
+          "__getattr__"
+        ],
+        "imports": [
+          "__future__",
+          "_utils",
+          "abc",
+          "collections",
+          "collections.abc",
+          "contextlib",
+          "enum",
+          "errno",
+          "exceptions",
+          "formatting",
+          "functools",
+          "gettext",
+          "globals",
+          "inspect",
+          "itertools",
+          "os",
+          "parser",
+          "sys",
+          "termui",
+          "types",
+          "typing",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/decorators.py",
+        "line_count": 621,
+        "classes": [],
+        "functions": [
+          "pass_context",
+          "pass_obj",
+          "make_pass_decorator",
+          "pass_meta_key",
+          "command",
+          "command",
+          "command",
+          "command",
+          "command",
+          "group",
+          "group",
+          "group",
+          "group",
+          "group",
+          "_param_memo",
+          "argument",
+          "option",
+          "confirmation_option",
+          "password_option",
+          "version_option",
+          "custom_version_option",
+          "help_option"
+        ],
+        "imports": [
+          "__future__",
+          "core",
+          "functools",
+          "gettext",
+          "globals",
+          "inspect",
+          "typing",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/exceptions.py",
+        "line_count": 378,
+        "classes": [
+          {
+            "name": "ClickException",
+            "methods": [
+              "__init__",
+              "format_message",
+              "__str__",
+              "show"
+            ],
+            "init_params": [
+              "message"
+            ],
+            "bases": [
+              "Exception"
+            ]
+          },
+          {
+            "name": "UsageError",
+            "methods": [
+              "__init__",
+              "show"
+            ],
+            "init_params": [
+              "message",
+              "ctx"
+            ],
+            "bases": [
+              "ClickException"
+            ]
+          },
+          {
+            "name": "BadParameter",
+            "methods": [
+              "__init__",
+              "format_message"
+            ],
+            "init_params": [
+              "message",
+              "ctx",
+              "param",
+              "param_hint"
+            ],
+            "bases": [
+              "UsageError"
+            ]
+          },
+          {
+            "name": "MissingParameter",
+            "methods": [
+              "__init__",
+              "format_message",
+              "__str__"
+            ],
+            "init_params": [
+              "message",
+              "ctx",
+              "param",
+              "param_hint",
+              "param_type"
+            ],
+            "bases": [
+              "BadParameter"
+            ]
+          },
+          {
+            "name": "NoSuchOption",
+            "methods": [
+              "__init__",
+              "format_message"
+            ],
+            "init_params": [
+              "option_name",
+              "message",
+              "possibilities",
+              "ctx"
+            ],
+            "bases": [
+              "UsageError"
+            ]
+          },
+          {
+            "name": "NoSuchCommand",
+            "methods": [
+              "__init__",
+              "format_message"
+            ],
+            "init_params": [
+              "command_name",
+              "message",
+              "possibilities",
+              "ctx"
+            ],
+            "bases": [
+              "UsageError"
+            ]
+          },
+          {
+            "name": "BadOptionUsage",
+            "methods": [
+              "__init__"
+            ],
+            "init_params": [
+              "option_name",
+              "message",
+              "ctx"
+            ],
+            "bases": [
+              "UsageError"
+            ]
+          },
+          {
+            "name": "BadArgumentUsage",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "UsageError"
+            ]
+          },
+          {
+            "name": "NoArgsIsHelpError",
+            "methods": [
+              "__init__",
+              "show"
+            ],
+            "init_params": [
+              "ctx"
+            ],
+            "bases": [
+              "UsageError"
+            ]
+          },
+          {
+            "name": "FileError",
+            "methods": [
+              "__init__",
+              "format_message"
+            ],
+            "init_params": [
+              "filename",
+              "hint"
+            ],
+            "bases": [
+              "ClickException"
+            ]
+          },
+          {
+            "name": "Abort",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "RuntimeError"
+            ]
+          },
+          {
+            "name": "Exit",
+            "methods": [
+              "__init__"
+            ],
+            "init_params": [
+              "code"
+            ],
+            "bases": [
+              "RuntimeError"
+            ]
+          }
+        ],
+        "functions": [
+          "_join_param_hints",
+          "_format_possibilities"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "gettext",
+          "globals",
+          "typing",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/formatting.py",
+        "line_count": 329,
+        "classes": [
+          {
+            "name": "HelpFormatter",
+            "methods": [
+              "__init__",
+              "write",
+              "indent",
+              "dedent",
+              "write_usage",
+              "write_heading",
+              "write_paragraph",
+              "write_text",
+              "write_dl",
+              "section",
+              "indentation",
+              "getvalue"
+            ],
+            "init_params": [
+              "indent_increment",
+              "width",
+              "max_width"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "measure_table",
+          "iter_rows",
+          "wrap_text",
+          "join_options"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "contextlib",
+          "gettext",
+          "parser"
+        ]
+      },
+      {
+        "relative_path": "src/click/globals.py",
+        "line_count": 67,
+        "classes": [],
+        "functions": [
+          "get_current_context",
+          "get_current_context",
+          "get_current_context",
+          "push_context",
+          "pop_context",
+          "resolve_color_default"
+        ],
+        "imports": [
+          "__future__",
+          "threading",
+          "typing"
+        ]
+      },
+      {
+        "relative_path": "src/click/parser.py",
+        "line_count": 533,
+        "classes": [
+          {
+            "name": "_Option",
+            "methods": [
+              "__init__",
+              "takes_value",
+              "process"
+            ],
+            "init_params": [
+              "obj",
+              "opts",
+              "dest",
+              "action",
+              "nargs",
+              "const"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_Argument",
+            "methods": [
+              "__init__",
+              "process"
+            ],
+            "init_params": [
+              "obj",
+              "dest",
+              "nargs"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_ParsingState",
+            "methods": [
+              "__init__"
+            ],
+            "init_params": [
+              "rargs"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_OptionParser",
+            "methods": [
+              "__init__",
+              "add_option",
+              "add_argument",
+              "parse_args",
+              "_process_args_for_args",
+              "_process_args_for_options",
+              "_match_long_opt",
+              "_match_short_opt",
+              "_get_value_from_state",
+              "_process_opts"
+            ],
+            "init_params": [
+              "ctx"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "_unpack_args",
+          "_split_opt",
+          "_normalize_opt",
+          "__getattr__"
+        ],
+        "imports": [
+          "__future__",
+          "_utils",
+          "collections",
+          "collections.abc",
+          "exceptions",
+          "gettext",
+          "typing"
+        ]
+      },
+      {
+        "relative_path": "src/click/shell_completion.py",
+        "line_count": 796,
+        "classes": [
+          {
+            "name": "CompletionItem",
+            "methods": [
+              "__init__",
+              "__getattr__"
+            ],
+            "init_params": [
+              "value",
+              "type",
+              "help"
+            ],
+            "bases": [
+              "t.Generic[_ValueT_co]"
+            ]
+          },
+          {
+            "name": "_SourceVarsDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "t.TypedDict"
+            ]
+          },
+          {
+            "name": "ShellComplete",
+            "methods": [
+              "__init__",
+              "func_name",
+              "source_vars",
+              "source",
+              "get_completion_args",
+              "get_completions",
+              "format_completion",
+              "complete"
+            ],
+            "init_params": [
+              "cli",
+              "ctx_args",
+              "prog_name",
+              "complete_var"
+            ],
+            "bases": []
+          },
+          {
+            "name": "BashComplete",
+            "methods": [
+              "_check_version",
+              "source",
+              "get_completion_args",
+              "format_completion"
+            ],
+            "init_params": [],
+            "bases": [
+              "ShellComplete"
+            ]
+          },
+          {
+            "name": "ZshComplete",
+            "methods": [
+              "get_completion_args",
+              "format_completion"
+            ],
+            "init_params": [],
+            "bases": [
+              "ShellComplete"
+            ]
+          },
+          {
+            "name": "FishComplete",
+            "methods": [
+              "get_completion_args",
+              "format_completion"
+            ],
+            "init_params": [],
+            "bases": [
+              "ShellComplete"
+            ]
+          },
+          {
+            "name": "PowerShellComplete",
+            "methods": [
+              "get_completion_args",
+              "format_completion"
+            ],
+            "init_params": [],
+            "bases": [
+              "ShellComplete"
+            ]
+          }
+        ],
+        "functions": [
+          "shell_complete",
+          "add_completion_class",
+          "get_completion_class",
+          "get_completion_class",
+          "get_completion_class",
+          "get_completion_class",
+          "get_completion_class",
+          "split_arg_string",
+          "_is_incomplete_argument",
+          "_start_of_option",
+          "_is_incomplete_option",
+          "_resolve_context",
+          "_resolve_incomplete"
+        ],
+        "imports": [
+          "__future__",
+          "collections.abc",
+          "core",
+          "gettext",
+          "os",
+          "re",
+          "typing",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/termui.py",
+        "line_count": 1024,
+        "classes": [],
+        "functions": [
+          "_mask_hidden_input",
+          "hidden_prompt_func",
+          "_readline_prompt",
+          "_build_prompt",
+          "_format_default",
+          "prompt",
+          "prompt",
+          "prompt",
+          "confirm",
+          "get_pager_file",
+          "echo_via_pager",
+          "progressbar",
+          "progressbar",
+          "progressbar",
+          "clear",
+          "_interpret_color",
+          "style",
+          "unstyle",
+          "secho",
+          "edit",
+          "edit",
+          "edit",
+          "edit",
+          "launch",
+          "getchar",
+          "raw_terminal",
+          "pause"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "contextlib",
+          "exceptions",
+          "gettext",
+          "globals",
+          "inspect",
+          "io",
+          "itertools",
+          "os",
+          "re",
+          "sys",
+          "types",
+          "typing",
+          "utils"
+        ]
+      },
+      {
+        "relative_path": "src/click/testing.py",
+        "line_count": 840,
+        "classes": [
+          {
+            "name": "EchoingStdin",
+            "methods": [
+              "__init__",
+              "__getattr__",
+              "_echo",
+              "read",
+              "read1",
+              "readline",
+              "readlines",
+              "__iter__",
+              "__repr__"
+            ],
+            "init_params": [
+              "input",
+              "output"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_FDCapture",
+            "methods": [
+              "__init__",
+              "start",
+              "stop"
+            ],
+            "init_params": [
+              "targetfd"
+            ],
+            "bases": []
+          },
+          {
+            "name": "BytesIOCopy",
+            "methods": [
+              "__init__",
+              "flush",
+              "write"
+            ],
+            "init_params": [
+              "copy_to"
+            ],
+            "bases": [
+              "io.BytesIO"
+            ]
+          },
+          {
+            "name": "StreamMixer",
+            "methods": [
+              "__init__"
+            ],
+            "init_params": [],
+            "bases": []
+          },
+          {
+            "name": "_NamedTextIOWrapper",
+            "methods": [
+              "__init__",
+              "close",
+              "fileno",
+              "name",
+              "mode"
+            ],
+            "init_params": [
+              "buffer",
+              "name",
+              "mode"
+            ],
+            "bases": [
+              "io.TextIOWrapper"
+            ]
+          },
+          {
+            "name": "Result",
+            "methods": [
+              "__init__",
+              "output",
+              "stdout",
+              "stderr",
+              "__repr__"
+            ],
+            "init_params": [
+              "runner",
+              "stdout_bytes",
+              "stderr_bytes",
+              "output_bytes",
+              "return_value",
+              "exit_code",
+              "exception",
+              "exc_info"
+            ],
+            "bases": []
+          },
+          {
+            "name": "CliRunner",
+            "methods": [
+              "__init__",
+              "get_default_prog_name",
+              "make_env",
+              "isolation",
+              "invoke",
+              "isolated_filesystem"
+            ],
+            "init_params": [
+              "charset",
+              "env",
+              "echo_stdin",
+              "catch_exceptions",
+              "capture"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "_pause_echo",
+          "make_input_stream"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "contextlib",
+          "io",
+          "os",
+          "pdb",
+          "shlex",
+          "sys",
+          "tempfile",
+          "types",
+          "typing"
+        ]
+      },
+      {
+        "relative_path": "src/click/types.py",
+        "line_count": 1408,
+        "classes": [
+          {
+            "name": "ParamTypeInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "t.TypedDict"
+            ]
+          },
+          {
+            "name": "ParamType",
+            "methods": [
+              "to_info_dict",
+              "__call__",
+              "__call__",
+              "__call__",
+              "get_metavar",
+              "get_missing_message",
+              "convert",
+              "split_envvar_value",
+              "fail",
+              "shell_complete"
+            ],
+            "init_params": [],
+            "bases": [
+              "t.Generic[_ValueT_co, _InputT_contra]",
+              "abc.ABC"
+            ]
+          },
+          {
+            "name": "CompositeParamType",
+            "methods": [
+              "arity"
+            ],
+            "init_params": [],
+            "bases": [
+              "ParamType[_ValueT_co]"
+            ]
+          },
+          {
+            "name": "FuncParamTypeInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict",
+              "t.Generic[_ValueT_contra, _ValueT_co]"
+            ]
+          },
+          {
+            "name": "FuncParamType",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "convert"
+            ],
+            "init_params": [
+              "func"
+            ],
+            "bases": [
+              "ParamType[_ValueT_co]",
+              "t.Generic[_ValueT_contra, _ValueT_co]"
+            ]
+          },
+          {
+            "name": "UnprocessedParamType",
+            "methods": [
+              "convert",
+              "__repr__"
+            ],
+            "init_params": [],
+            "bases": [
+              "ParamType[t.Any]"
+            ]
+          },
+          {
+            "name": "StringParamType",
+            "methods": [
+              "convert",
+              "__repr__"
+            ],
+            "init_params": [],
+            "bases": [
+              "ParamType[str]"
+            ]
+          },
+          {
+            "name": "ChoiceInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict",
+              "t.Generic[_ValueT_co]"
+            ]
+          },
+          {
+            "name": "Choice",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "_normalized_mapping",
+              "normalize_choice",
+              "get_metavar",
+              "get_missing_message",
+              "convert",
+              "get_invalid_choice_message",
+              "__repr__",
+              "shell_complete"
+            ],
+            "init_params": [
+              "choices",
+              "case_sensitive"
+            ],
+            "bases": [
+              "ParamType[_ValueT_co]",
+              "t.Generic[_ValueT_co]"
+            ]
+          },
+          {
+            "name": "DateTimeInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict"
+            ]
+          },
+          {
+            "name": "DateTime",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "get_metavar",
+              "_try_to_convert_date",
+              "convert",
+              "__repr__"
+            ],
+            "init_params": [
+              "formats"
+            ],
+            "bases": [
+              "ParamType[datetime]"
+            ]
+          },
+          {
+            "name": "_NumberParamTypeBase",
+            "methods": [
+              "convert"
+            ],
+            "init_params": [],
+            "bases": [
+              "ParamType[_ValueT_co]",
+              "t.Generic[_ValueT_contra, _ValueT_co]"
+            ]
+          },
+          {
+            "name": "NumberRangeInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict",
+              "t.Generic[_FloatValueT_co]"
+            ]
+          },
+          {
+            "name": "_NumberRangeBase",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "convert",
+              "_clamp",
+              "_describe_range",
+              "__repr__"
+            ],
+            "init_params": [
+              "min",
+              "max",
+              "min_open",
+              "max_open",
+              "clamp"
+            ],
+            "bases": [
+              "_NumberParamTypeBase[_ValueT_contra, _FloatValueT_co]",
+              "t.Generic[_ValueT_contra, _FloatValueT_co]"
+            ]
+          },
+          {
+            "name": "IntParamType",
+            "methods": [
+              "__repr__"
+            ],
+            "init_params": [],
+            "bases": [
+              "_NumberParamTypeBase[t.SupportsInt | t.SupportsIndex, int]"
+            ]
+          },
+          {
+            "name": "IntRange",
+            "methods": [
+              "_clamp"
+            ],
+            "init_params": [],
+            "bases": [
+              "_NumberRangeBase[int, int]",
+              "IntParamType"
+            ]
+          },
+          {
+            "name": "FloatParamType",
+            "methods": [
+              "__repr__"
+            ],
+            "init_params": [],
+            "bases": [
+              "_NumberParamTypeBase[t.SupportsFloat | t.SupportsIndex, float]"
+            ]
+          },
+          {
+            "name": "FloatRange",
+            "methods": [
+              "__init__",
+              "_clamp"
+            ],
+            "init_params": [
+              "min",
+              "max",
+              "min_open",
+              "max_open",
+              "clamp"
+            ],
+            "bases": [
+              "_NumberRangeBase[float, float]",
+              "FloatParamType"
+            ]
+          },
+          {
+            "name": "BoolParamType",
+            "methods": [
+              "str_to_bool",
+              "convert",
+              "__repr__"
+            ],
+            "init_params": [],
+            "bases": [
+              "ParamType[bool]"
+            ]
+          },
+          {
+            "name": "UUIDParameterType",
+            "methods": [
+              "convert",
+              "__repr__"
+            ],
+            "init_params": [],
+            "bases": [
+              "ParamType[uuid.UUID]"
+            ]
+          },
+          {
+            "name": "FileInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict"
+            ]
+          },
+          {
+            "name": "File",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "resolve_lazy_flag",
+              "convert",
+              "shell_complete"
+            ],
+            "init_params": [
+              "mode",
+              "encoding",
+              "errors",
+              "lazy",
+              "atomic"
+            ],
+            "bases": [
+              "ParamType[t.IO[t.Any]]"
+            ]
+          },
+          {
+            "name": "PathInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict"
+            ]
+          },
+          {
+            "name": "Path",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "coerce_path_result",
+              "convert",
+              "shell_complete"
+            ],
+            "init_params": [
+              "exists",
+              "file_okay",
+              "dir_okay",
+              "writable",
+              "readable",
+              "resolve_path",
+              "allow_dash",
+              "path_type",
+              "executable"
+            ],
+            "bases": [
+              "ParamType[_PathT_co, str | os.PathLike[str]]",
+              "t.Generic[_PathT_co]"
+            ]
+          },
+          {
+            "name": "TupleInfoDict",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "ParamTypeInfoDict"
+            ]
+          },
+          {
+            "name": "Tuple",
+            "methods": [
+              "__init__",
+              "to_info_dict",
+              "name",
+              "arity",
+              "convert"
+            ],
+            "init_params": [
+              "types"
+            ],
+            "bases": [
+              "CompositeParamType[tuple[t.Any, ...]]"
+            ]
+          },
+          {
+            "name": "OptionHelpExtra",
+            "methods": [],
+            "init_params": [],
+            "bases": [
+              "t.TypedDict"
+            ]
+          }
+        ],
+        "functions": [
+          "_is_file_like",
+          "_guess_type",
+          "convert_type",
+          "convert_type",
+          "convert_type",
+          "convert_type"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "abc",
+          "collections.abc",
+          "datetime",
+          "enum",
+          "exceptions",
+          "gettext",
+          "os",
+          "stat",
+          "sys",
+          "typing",
+          "utils",
+          "uuid"
+        ]
+      },
+      {
+        "relative_path": "src/click/utils.py",
+        "line_count": 672,
+        "classes": [
+          {
+            "name": "_LazyFile",
+            "methods": [
+              "__init__",
+              "__getattr__",
+              "__repr__",
+              "open",
+              "close",
+              "close_intelligently",
+              "__enter__",
+              "__exit__",
+              "__iter__"
+            ],
+            "init_params": [
+              "filename",
+              "mode",
+              "encoding",
+              "errors",
+              "atomic"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_KeepOpenFile",
+            "methods": [
+              "__init__",
+              "__getattr__",
+              "__enter__",
+              "__exit__",
+              "__repr__",
+              "__iter__"
+            ],
+            "init_params": [
+              "file"
+            ],
+            "bases": []
+          },
+          {
+            "name": "_PacifyFlushWrapper",
+            "methods": [
+              "__init__",
+              "flush",
+              "__getattr__"
+            ],
+            "init_params": [
+              "wrapped"
+            ],
+            "bases": []
+          }
+        ],
+        "functions": [
+          "_posixify",
+          "_safecall",
+          "make_str",
+          "_make_default_short_help",
+          "echo",
+          "_get_binary_stream",
+          "_get_text_stream",
+          "open_file",
+          "format_filename",
+          "get_app_dir",
+          "_detect_program_name",
+          "_expand_args",
+          "__getattr__"
+        ],
+        "imports": [
+          "__future__",
+          "_compat",
+          "collections.abc",
+          "functools",
+          "gettext",
+          "globals",
+          "os",
+          "re",
+          "sys",
+          "types",
+          "typing"
+        ]
+      }
+    ],
+    "public_exports": [
+      "Abort",
+      "Argument",
+      "BOOL",
+      "BadArgumentUsage",
+      "BadOptionUsage",
+      "BadParameter",
+      "Choice",
+      "ClickException",
+      "Command",
+      "CommandCollection",
+      "Context",
+      "DateTime",
+      "FLOAT",
+      "File",
+      "FileError",
+      "FloatRange",
+      "Group",
+      "HelpFormatter",
+      "INT",
+      "IntRange",
+      "MissingParameter",
+      "NoSuchCommand",
+      "NoSuchOption",
+      "Option",
+      "ParamType",
+      "Parameter",
+      "ParameterSource",
+      "Path",
+      "STRING",
+      "Tuple",
+      "UNPROCESSED",
+      "UUID",
+      "UsageError",
+      "annotations",
+      "argument",
+      "clear",
+      "command",
+      "confirm",
+      "confirmation_option",
+      "custom_version_option",
+      "echo",
+      "echo_via_pager",
+      "edit",
+      "format_filename",
+      "get_app_dir",
+      "get_current_context",
+      "get_pager_file",
+      "getchar",
+      "group",
+      "help_option",
+      "launch",
+      "make_pass_decorator",
+      "open_file",
+      "option",
+      "pass_context",
+      "pass_obj",
+      "password_option",
+      "pause",
+      "progressbar",
+      "prompt",
+      "secho",
+      "style",
+      "unstyle",
+      "version_option",
+      "wrap_text"
+    ],
+    "symbol_index": {
+      "src/click/__init__.py": [
+        "__getattr__"
+      ],
+      "src/click/_compat.py": [
+        "_NonClosingTextIOWrapper",
+        "_FixupStream",
+        "_AtomicFile",
+        "_make_text_stream",
+        "is_ascii_encoding",
+        "get_best_encoding",
+        "_is_binary_reader",
+        "_is_binary_writer",
+        "_find_binary_reader",
+        "_find_binary_writer",
+        "_stream_is_misconfigured",
+        "_is_compat_stream_attr",
+        "_is_compatible_text_stream",
+        "_force_correct_text_stream",
+        "_force_correct_text_reader",
+        "_force_correct_text_writer",
+        "get_binary_stdin",
+        "get_binary_stdout",
+        "get_binary_stderr",
+        "get_text_stdin",
+        "get_text_stdout",
+        "get_text_stderr",
+        "_wrap_io_open",
+        "open_stream",
+        "strip_ansi",
+        "_is_jupyter_kernel_output",
+        "should_strip_ansi",
+        "term_len",
+        "isatty",
+        "_make_cached_stream_func"
+      ],
+      "src/click/_termui_impl.py": [
+        "ProgressBar",
+        "_PagerWriter",
+        "Editor",
+        "_resolve_pager_command",
+        "_pager_contextmanager",
+        "get_pager_file",
+        "_less_uses_raw_mode",
+        "_pipepager",
+        "_tempfilepager",
+        "_nullpager",
+        "open_url",
+        "_translate_ch_to_exc"
+      ],
+      "src/click/_textwrap.py": [
+        "TextWrapper"
+      ],
+      "src/click/_utils.py": [
+        "Sentinel"
+      ],
+      "src/click/_winconsole.py": [
+        "_WindowsConsoleRawIOBase",
+        "_WindowsConsoleReader",
+        "_WindowsConsoleWriter",
+        "ConsoleStream",
+        "_get_text_stdin",
+        "_get_text_stdout",
+        "_get_text_stderr",
+        "_is_console",
+        "_get_windows_console_stream"
+      ],
+      "src/click/core.py": [
+        "ParameterSource",
+        "Context",
+        "Command",
+        "_FakeSubclassCheck",
+        "_BaseCommand",
+        "Group",
+        "_MultiCommand",
+        "CommandCollection",
+        "Parameter",
+        "Option",
+        "Argument",
+        "_complete_visible_commands",
+        "_check_nested_chain",
+        "_echo_aborted",
+        "_outside_click_stacklevel",
+        "_format_deprecated_label",
+        "_format_deprecated_suffix",
+        "batch",
+        "augment_usage_errors",
+        "iter_params_for_processing",
+        "_check_iter",
+        "__getattr__"
+      ],
+      "src/click/decorators.py": [
+        "pass_context",
+        "pass_obj",
+        "make_pass_decorator",
+        "pass_meta_key",
+        "command",
+        "command",
+        "command",
+        "command",
+        "command",
+        "group",
+        "group",
+        "group",
+        "group",
+        "group",
+        "_param_memo",
+        "argument",
+        "option",
+        "confirmation_option",
+        "password_option",
+        "version_option",
+        "custom_version_option",
+        "help_option"
+      ],
+      "src/click/exceptions.py": [
+        "ClickException",
+        "UsageError",
+        "BadParameter",
+        "MissingParameter",
+        "NoSuchOption",
+        "NoSuchCommand",
+        "BadOptionUsage",
+        "BadArgumentUsage",
+        "NoArgsIsHelpError",
+        "FileError",
+        "Abort",
+        "Exit",
+        "_join_param_hints",
+        "_format_possibilities"
+      ],
+      "src/click/formatting.py": [
+        "HelpFormatter",
+        "measure_table",
+        "iter_rows",
+        "wrap_text",
+        "join_options"
+      ],
+      "src/click/globals.py": [
+        "get_current_context",
+        "get_current_context",
+        "get_current_context",
+        "push_context",
+        "pop_context",
+        "resolve_color_default"
+      ],
+      "src/click/parser.py": [
+        "_Option",
+        "_Argument",
+        "_ParsingState",
+        "_OptionParser",
+        "_unpack_args",
+        "_split_opt",
+        "_normalize_opt",
+        "__getattr__"
+      ],
+      "src/click/shell_completion.py": [
+        "CompletionItem",
+        "_SourceVarsDict",
+        "ShellComplete",
+        "BashComplete",
+        "ZshComplete",
+        "FishComplete",
+        "PowerShellComplete",
+        "shell_complete",
+        "add_completion_class",
+        "get_completion_class",
+        "get_completion_class",
+        "get_completion_class",
+        "get_completion_class",
+        "get_completion_class",
+        "split_arg_string",
+        "_is_incomplete_argument",
+        "_start_of_option",
+        "_is_incomplete_option",
+        "_resolve_context",
+        "_resolve_incomplete"
+      ],
+      "src/click/termui.py": [
+        "_mask_hidden_input",
+        "hidden_prompt_func",
+        "_readline_prompt",
+        "_build_prompt",
+        "_format_default",
+        "prompt",
+        "prompt",
+        "prompt",
+        "confirm",
+        "get_pager_file",
+        "echo_via_pager",
+        "progressbar",
+        "progressbar",
+        "progressbar",
+        "clear",
+        "_interpret_color",
+        "style",
+        "unstyle",
+        "secho",
+        "edit",
+        "edit",
+        "edit",
+        "edit",
+        "launch",
+        "getchar",
+        "raw_terminal",
+        "pause"
+      ],
+      "src/click/testing.py": [
+        "EchoingStdin",
+        "_FDCapture",
+        "BytesIOCopy",
+        "StreamMixer",
+        "_NamedTextIOWrapper",
+        "Result",
+        "CliRunner",
+        "_pause_echo",
+        "make_input_stream"
+      ],
+      "src/click/types.py": [
+        "ParamTypeInfoDict",
+        "ParamType",
+        "CompositeParamType",
+        "FuncParamTypeInfoDict",
+        "FuncParamType",
+        "UnprocessedParamType",
+        "StringParamType",
+        "ChoiceInfoDict",
+        "Choice",
+        "DateTimeInfoDict",
+        "DateTime",
+        "_NumberParamTypeBase",
+        "NumberRangeInfoDict",
+        "_NumberRangeBase",
+        "IntParamType",
+        "IntRange",
+        "FloatParamType",
+        "FloatRange",
+        "BoolParamType",
+        "UUIDParameterType",
+        "FileInfoDict",
+        "File",
+        "PathInfoDict",
+        "Path",
+        "TupleInfoDict",
+        "Tuple",
+        "OptionHelpExtra",
+        "_is_file_like",
+        "_guess_type",
+        "convert_type",
+        "convert_type",
+        "convert_type",
+        "convert_type"
+      ],
+      "src/click/utils.py": [
+        "_LazyFile",
+        "_KeepOpenFile",
+        "_PacifyFlushWrapper",
+        "_posixify",
+        "_safecall",
+        "make_str",
+        "_make_default_short_help",
+        "echo",
+        "_get_binary_stream",
+        "_get_text_stream",
+        "open_file",
+        "format_filename",
+        "get_app_dir",
+        "_detect_program_name",
+        "_expand_args",
+        "__getattr__"
+      ]
+    }
+  },
+  "test_analysis": {
+    "test_file_count": 58,
+    "total_test_functions": 629,
+    "test_files": [
+      {
+        "relative_path": "tests/test_abort_interrupt.py",
+        "test_count": 4,
+        "sample_tests": [
+          "test_interrupt_while_reporting_abort",
+          "test_interrupt_while_reporting_error",
+          "test_late_interrupt_with_disabled_standalone_mode",
+          "test_interrupt_while_exiting_after_success"
+        ]
+      },
+      {
+        "relative_path": "tests/test_arguments.py",
+        "test_count": 61,
+        "sample_tests": [
+          "test_nargs_star",
+          "test_nargs_tup",
+          "test_nargs_tup_composite",
+          "test_nargs_mismatch_with_tuple_type",
+          "test_nargs_err",
+          "test_argument_names",
+          "test_argument_normalizes_an_identifier_decl",
+          "test_parameter_name_is_an_identifier_or_deprecated"
+        ]
+      },
+      {
+        "relative_path": "tests/test_basic.py",
+        "test_count": 42,
+        "sample_tests": [
+          "test_basic_functionality",
+          "test_param_named_help",
+          "test_param_squatting_help_option_name",
+          "test_option_reusing_help_flag",
+          "test_repr",
+          "test_return_values",
+          "test_basic_group",
+          "test_group_commands_dict"
+        ]
+      },
+      {
+        "relative_path": "tests/test_chain.py",
+        "test_count": 9,
+        "sample_tests": [
+          "test_basic_chaining",
+          "test_chaining_help",
+          "test_chaining_with_options",
+          "test_no_command_result_callback",
+          "test_chaining_with_arguments",
+          "test_pipeline",
+          "test_args_and_chain",
+          "test_group_arg_behavior"
+        ]
+      },
+      {
+        "relative_path": "tests/test_command_decorators.py",
+        "test_count": 5,
+        "sample_tests": [
+          "test_command_no_parens",
+          "test_custom_command_no_parens",
+          "test_group_no_parens",
+          "test_params_argument",
+          "test_generate_name"
+        ]
+      },
+      {
+        "relative_path": "tests/test_commands.py",
+        "test_count": 29,
+        "sample_tests": [
+          "test_other_command_invoke",
+          "test_other_command_forward",
+          "test_forwarded_params_consistency",
+          "test_auto_shorthelp",
+          "test_command_no_args_is_help",
+          "test_default_maps",
+          "test_group_with_args",
+          "test_custom_parser"
+        ]
+      },
+      {
+        "relative_path": "tests/test_compat.py",
+        "test_count": 11,
+        "sample_tests": [
+          "test_is_jupyter_kernel_output",
+          "test_should_strip_ansi",
+          "test_strip_ansi_removes_full_sequence",
+          "test_strip_ansi_is_superset_of_legacy",
+          "test_strip_ansi_mixed_content",
+          "test_strip_ansi_stops_at_final_byte",
+          "test_strip_ansi_leaves_plain_text",
+          "test_strip_ansi_leaves_incomplete_sequences"
+        ]
+      },
+      {
+        "relative_path": "tests/test_context.py",
+        "test_count": 25,
+        "sample_tests": [
+          "test_ensure_context_objects",
+          "test_get_context_objects",
+          "test_get_context_objects_no_ensuring",
+          "test_get_context_objects_missing",
+          "test_multi_enter",
+          "test_global_context_object",
+          "test_context_meta",
+          "test_make_pass_meta_decorator"
+        ]
+      },
+      {
+        "relative_path": "tests/test_custom_classes.py",
+        "test_count": 6,
+        "sample_tests": [
+          "test_command_context_class",
+          "test_context_invoke_type",
+          "test_context_formatter_class",
+          "test_group_command_class",
+          "test_group_group_class",
+          "test_group_group_class_self"
+        ]
+      },
+      {
+        "relative_path": "tests/test_defaults.py",
+        "test_count": 17,
+        "sample_tests": [
+          "test_basic_defaults",
+          "test_multiple_defaults",
+          "test_nargs_plus_multiple",
+          "test_multiple_flag_default",
+          "test_flag_default_map",
+          "test_shared_param_prefers_first_default",
+          "test_lookup_default_returns_hides_sentinel",
+          "test_lookup_default_callable_in_default_map"
+        ]
+      },
+      {
+        "relative_path": "tests/test_deprecations.py",
+        "test_count": 13,
+        "sample_tests": [
+          "test_attr_deprecated",
+          "test_unknown_attribute_raises",
+          "test_context_protected_args_deprecated",
+          "test_parameter_human_readable_name_deprecated",
+          "test_parameter_human_readable_name_override_deprecated",
+          "test_parameter_subclass_without_override_is_silent",
+          "test_isolated_filesystem_deprecated",
+          "test_unusable_name_deprecated"
+        ]
+      },
+      {
+        "relative_path": "tests/test_exceptions/__init__.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/test_exceptions/test_FileError.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_file_error_surrogates"
+        ]
+      },
+      {
+        "relative_path": "tests/test_formatting.py",
+        "test_count": 28,
+        "sample_tests": [
+          "test_basic_functionality",
+          "test_wrapping_long_options_strings",
+          "test_wrapping_long_command_name",
+          "test_formatting_empty_help_lines",
+          "test_formatting_usage_error",
+          "test_formatting_usage_error_metavar_missing_arg",
+          "test_formatting_usage_error_metavar_bad_arg",
+          "test_formatting_usage_error_nested"
+        ]
+      },
+      {
+        "relative_path": "tests/test_imports.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_light_imports"
+        ]
+      },
+      {
+        "relative_path": "tests/test_info_dict.py",
+        "test_count": 8,
+        "sample_tests": [
+          "test_parameter",
+          "test_command",
+          "test_context",
+          "test_paramtype_no_name",
+          "test_param_to_info_dict_help",
+          "test_param_to_info_dict_deprecated_help",
+          "test_argument_to_info_dict_nargs",
+          "test_command_to_info_dict_multiple_arguments"
+        ]
+      },
+      {
+        "relative_path": "tests/test_normalization.py",
+        "test_count": 3,
+        "sample_tests": [
+          "test_option_normalization",
+          "test_choice_normalization",
+          "test_command_normalization"
+        ]
+      },
+      {
+        "relative_path": "tests/test_options.py",
+        "test_count": 123,
+        "sample_tests": [
+          "test_prefixes",
+          "test_invalid_option",
+          "test_deprecated_usage",
+          "test_deprecated_empty_help_no_leading_space",
+          "test_help_spec",
+          "test_spec",
+          "test_spec_with_explicit_name",
+          "test_deprecated_warning"
+        ]
+      },
+      {
+        "relative_path": "tests/test_parser.py",
+        "test_count": 3,
+        "sample_tests": [
+          "test_split_arg_string",
+          "test_parser_default_prefixes",
+          "test_parser_collects_prefixes"
+        ]
+      },
+      {
+        "relative_path": "tests/test_shell_completion.py",
+        "test_count": 38,
+        "sample_tests": [
+          "test_command",
+          "test_group",
+          "test_nested_group",
+          "test_group_command_same_option",
+          "test_chained",
+          "test_help_option",
+          "test_argument_order",
+          "test_argument_default"
+        ]
+      },
+      {
+        "relative_path": "tests/test_stream_lifecycle.py",
+        "test_count": 27,
+        "sample_tests": [
+          "test_wrapper_close_does_not_close_underlying_buffer",
+          "test_wrapper_del_does_not_close_underlying_buffer",
+          "test_multiple_wrappers_same_buffer",
+          "test_wrapper_preserves_name_and_mode",
+          "test_mixer_buffers_survive_wrapper_gc",
+          "test_getvalue_after_isolation_exit",
+          "test_no_streammixer_del",
+          "test_bytesiocopy_writes_to_both"
+        ]
+      },
+      {
+        "relative_path": "tests/test_termui.py",
+        "test_count": 65,
+        "sample_tests": [
+          "test_progressbar_strip_regression",
+          "test_progressbar_length_hint",
+          "test_progressbar_no_tty",
+          "test_progressbar_hidden_manual",
+          "test_progressbar_lands_on_final_position",
+          "test_progressbar_time_per_iteration",
+          "test_progressbar_eta",
+          "test_progressbar_format_eta"
+        ]
+      },
+      {
+        "relative_path": "tests/test_testing.py",
+        "test_count": 47,
+        "sample_tests": [
+          "test_runner",
+          "test_echo_stdin_stream",
+          "test_echo_stdin_prompts",
+          "test_echo_stdin_control_bytes",
+          "test_echo_stdin_control_byte_is_not_a_line",
+          "test_runner_with_stream",
+          "test_prompts",
+          "test_getchar"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/__init__.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/test_types/test_Choice.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_choice_get_invalid_choice_message"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_convert_type.py",
+        "test_count": 5,
+        "sample_tests": [
+          "test_convert_type_from_container_default",
+          "test_explicit_container_type_splits_string",
+          "test_type_inferred_from_default",
+          "test_type_inferred_from_nested_sequence_default",
+          "test_explicit_dict_type_rejects_string"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_File.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_file_surrogates"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_FloatRange.py",
+        "test_count": 3,
+        "sample_tests": [
+          "test_range",
+          "test_range_fail",
+          "test_float_range_no_clamp_open"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_FuncParamType.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_func_param_type_uses_value_error_message"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_IntRange.py",
+        "test_count": 2,
+        "sample_tests": [
+          "test_range",
+          "test_range_fail"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_ParamType.py",
+        "test_count": 2,
+        "sample_tests": [
+          "test_param_type_input_parameter_defaults_at_runtime",
+          "test_param_type_subclass_omitting_input_parameter"
+        ]
+      },
+      {
+        "relative_path": "tests/test_types/test_Path.py",
+        "test_count": 6,
+        "sample_tests": [
+          "test_path_dash_no_byteswarning",
+          "test_path_resolve_symlink",
+          "test_path_surrogates",
+          "test_invalid_path_with_esc_sequence",
+          "test_path_type",
+          "test_path_converted_type_parameter_at_runtime"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/__init__.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/test_utils/test__detect_program_name.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_detect_program_name"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test__expand_args.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_expand_args"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_confirm.py",
+        "test_count": 3,
+        "sample_tests": [
+          "test_prompts",
+          "test_confirm_repeat",
+          "test_no"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_echo.py",
+        "test_count": 6,
+        "sample_tests": [
+          "test_echo",
+          "test_echo_custom_file",
+          "test_echo_no_streams",
+          "test_echo_with_capsys",
+          "test_echo_color_flag",
+          "test_echo_writing_to_standard_error"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_echo_via_pager.py",
+        "test_count": 3,
+        "sample_tests": [
+          "test_echo_via_pager",
+          "test_echo_via_pager_yields_before_exception",
+          "test_stress_echo_via_pager_exception_cleanup"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_format_filename.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_filename_formatting"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_KeepOpenFile.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_iter_keepopenfile"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_LazyFile.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_iter_lazyfile"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_make_default_short_help.py",
+        "test_count": 1,
+        "sample_tests": [
+          "test_make_default_short_help"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_open_file.py",
+        "test_count": 8,
+        "sample_tests": [
+          "test_open_file",
+          "test_open_file_pathlib_dash",
+          "test_open_file_ignore_errors_stdin",
+          "test_open_file_respects_ignore",
+          "test_open_file_ignore_invalid_utf8",
+          "test_open_file_ignore_no_encoding",
+          "test_open_file_atomic_permissions_existing_file",
+          "test_open_file_atomic_permissions_new_file"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_prompt.py",
+        "test_count": 6,
+        "sample_tests": [
+          "test_prompt_cast_default",
+          "test_prompt_default_round_trips_through_type",
+          "test_prompt_default_validated_by_type",
+          "test_prompts_abort",
+          "test_full_prompt_passed_to_readline",
+          "test_prompts_eof"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_sentinel.py",
+        "test_count": 4,
+        "sample_tests": [
+          "test_unset_sentinel",
+          "test_sentinel_value_is_a_bare_object",
+          "test_sentinel_duplication_preserves_identity",
+          "test_parameter_duplication"
+        ]
+      },
+      {
+        "relative_path": "tests/test_utils/test_style.py",
+        "test_count": 4,
+        "sample_tests": [
+          "test_styling",
+          "test_styling_invalid_color",
+          "test_unstyle_exception_message",
+          "test_unstyle_other_ansi"
+        ]
+      },
+      {
+        "relative_path": "tests/typing/typing_aliased_group.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_confirmation_option.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_edit.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_group_kw_options.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_help_option.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_options.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_password_option.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_path.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_progressbar.py",
+        "test_count": 2,
+        "sample_tests": [
+          "test_length_is_int",
+          "test_generic_on_iterable"
+        ]
+      },
+      {
+        "relative_path": "tests/typing/typing_prompt.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_simple_example.py",
+        "test_count": 0,
+        "sample_tests": []
+      },
+      {
+        "relative_path": "tests/typing/typing_version_option.py",
+        "test_count": 0,
+        "sample_tests": []
+      }
+    ]
+  },
+  "capability_scan": {
+    "existing_capabilities_rejected": [
+      {
+        "id": "deprecated_flag",
+        "title": "Command and Parameter deprecation warnings",
+        "already_exists": true,
+        "evidence": [
+          "AST init param `deprecated` found in `src/click/core.py::Command`",
+          "AST init param `deprecated` found in `src/click/core.py::Option`",
+          "AST init param `deprecated` found in `src/click/core.py::Parameter`",
+          "Pattern `DeprecationWarning: The command` matched in `src/click/core.py`",
+          "Pattern `deprecated:\\s*bool\\s*\\|\\s*str` matched in `src/click/core.py`"
+        ]
+      },
+      {
+        "id": "auto_envvar",
+        "title": "Automatic environment variable prefix lookup",
+        "already_exists": true,
+        "evidence": [
+          "AST init param `auto_envvar_prefix` found in `src/click/core.py::Context`",
+          "Pattern `allow_from_autoenv` matched in `src/click/core.py`",
+          "Pattern `auto_envvar_prefix` matched in `src/click/core.py`"
+        ]
+      }
+    ],
+    "novel_feature_opportunities": [
+      {
+        "id": "option_constraints",
+        "title": "Option Mutual Exclusivity and Dependency Constraints (conflicts_with / requires)",
+        "already_exists": false,
+        "evidence": []
+      },
+      {
+        "id": "command_aliases",
+        "title": "Command and Subcommand Aliases in Group Dispatch and Help",
+        "already_exists": false,
+        "evidence": []
+      },
+      {
+        "id": "bytesize_type",
+        "title": "Human-Readable ByteSize Parameter Type",
+        "already_exists": false,
+        "evidence": []
+      },
+      {
+        "id": "no_color_force_color",
+        "title": "Standard NO_COLOR and FORCE_COLOR Environment Variable Resolution",
+        "already_exists": false,
+        "evidence": []
+      },
+      {
+        "id": "echo_table",
+        "title": "Terminal Table Formatter and Printer (click.echo_table)",
+        "already_exists": false,
+        "evidence": []
+      }
+    ]
+  },
+  "analysis_duration_sec": 1.656
+}

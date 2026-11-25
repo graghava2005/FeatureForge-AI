@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "featureforge/click-command-aliases"
+version = "0.1.0"
+description = "Command and Subcommand Aliases in Group Dispatch and Help Output"
+keywords = ["python", "click", "feature-development", "command-routing"]
+
+[metadata]
+task_id = "task_02"
+slug = "command-aliases"
+repository = "pallets/click"
+base_commit = "08b803cf32ceb2ae6a772c62d5da42757a897d44"
+category = "feature-development"
+subsystem = "command-routing"
+difficulty = "medium"
+language = "python"
+test_framework = "pytest"
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 600.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096
+workdir = "/app"

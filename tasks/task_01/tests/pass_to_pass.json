@@ -1,0 +1,5 @@
+[
+  "tests/test_options.py",
+  "tests/test_defaults.py",
+  "tests/test_info_dict.py"
+]

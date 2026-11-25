@@ -1,0 +1,83 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+tests/test_feature_echo_table.py::test_format_table_simple_default_and_alignment FAILED [ 14%]
+tests/test_feature_echo_table.py::test_format_table_plain_and_grid_borders FAILED [ 28%]
+tests/test_feature_echo_table.py::test_format_table_ansi_aware_alignment FAILED [ 42%]
+tests/test_feature_echo_table.py::test_format_table_ragged_rows_none_and_empty FAILED [ 57%]
+tests/test_feature_echo_table.py::test_format_table_max_col_width_truncation FAILED [ 71%]
+tests/test_feature_echo_table.py::test_format_table_invalid_arguments FAILED [ 85%]
+tests/test_feature_echo_table.py::test_echo_table_stream_and_cli_runner FAILED [100%]
+
+================================== FAILURES ===================================
+_______________ test_format_table_simple_default_and_alignment ________________
+tests\test_feature_echo_table.py:12: in test_format_table_simple_default_and_alignment
+    out = click.format_table(
+          ^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: format_table
+__________________ test_format_table_plain_and_grid_borders ___________________
+tests\test_feature_echo_table.py:27: in test_format_table_plain_and_grid_borders
+    plain = click.format_table(
+            ^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: format_table
+___________________ test_format_table_ansi_aware_alignment ____________________
+tests\test_feature_echo_table.py:57: in test_format_table_ansi_aware_alignment
+    out = click.format_table(
+          ^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: format_table
+________________ test_format_table_ragged_rows_none_and_empty _________________
+tests\test_feature_echo_table.py:68: in test_format_table_ragged_rows_none_and_empty
+    assert click.format_table([]) == ""
+           ^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: format_table
+_________________ test_format_table_max_col_width_truncation __________________
+tests\test_feature_echo_table.py:86: in test_format_table_max_col_width_truncation
+    out = click.format_table(
+          ^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: format_table
+_____________________ test_format_table_invalid_arguments _____________________
+tests\test_feature_echo_table.py:101: in test_format_table_invalid_arguments
+    click.format_table([["a"]], border="markdown")  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: format_table
+____________________ test_echo_table_stream_and_cli_runner ____________________
+tests\test_feature_echo_table.py:113: in test_echo_table_stream_and_cli_runner
+    click.echo_table([[styled, 10]], headers=["Status", "N"], file=buf, color=False)
+    ^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_05__JbvZfRT__env_11p_xt2b\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: echo_table
+=========================== short test summary info ===========================
+FAILED tests/test_feature_echo_table.py::test_format_table_simple_default_and_alignment
+FAILED tests/test_feature_echo_table.py::test_format_table_plain_and_grid_borders
+FAILED tests/test_feature_echo_table.py::test_format_table_ansi_aware_alignment
+FAILED tests/test_feature_echo_table.py::test_format_table_ragged_rows_none_and_empty
+FAILED tests/test_feature_echo_table.py::test_format_table_max_col_width_truncation
+FAILED tests/test_feature_echo_table.py::test_format_table_invalid_arguments
+FAILED tests/test_feature_echo_table.py::test_echo_table_stream_and_cli_runner
+============================== 7 failed in 1.46s ==============================
+
+=== REGRESSION TESTS ===
+.................................................ss..................... [ 25%]
+.....ssss................................ssssssssssss................... [ 50%]
+...sssssss.............................................................. [ 75%]
+........................................................................ [100%]
+263 passed, 25 skipped in 4.49s
+

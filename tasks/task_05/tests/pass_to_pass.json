@@ -1,0 +1,4 @@
+[
+  "tests/test_termui.py",
+  "tests/test_imports.py"
+]

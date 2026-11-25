@@ -1,0 +1,196 @@
+--- a/src/click/termui.py
++++ b/src/click/termui.py
+@@ -15,6 +15,7 @@
+ from . import _compat
+ from ._compat import isatty
+ from ._compat import strip_ansi
++from ._compat import term_len
+ from .exceptions import Abort
+ from .exceptions import UsageError
+ from .globals import resolve_color_default
+@@ -1022,3 +1023,172 @@
+     finally:
+         if info:
+             echo(err=err)
++
++
++def _align_cell(text: str, width: int, alignment: str) -> str:
++    visible = term_len(text)
++    pad = max(0, width - visible)
++    if alignment == "left":
++        return text + (" " * pad)
++    if alignment == "right":
++        return (" " * pad) + text
++    if alignment == "center":
++        left_pad = pad // 2
++        right_pad = pad - left_pad
++        return (" " * left_pad) + text + (" " * right_pad)
++    raise ValueError(
++        f"Invalid alignment {alignment!r}; expected 'left', 'right', or 'center'."
++    )
++
++
++def _truncate_cell(text: str, max_col_width: int | None) -> str:
++    if max_col_width is None:
++        return text
++    if term_len(text) <= max_col_width:
++        return text
++    plain = strip_ansi(text)
++    if max_col_width <= 3:
++        return plain[:max_col_width]
++    return plain[: max_col_width - 3] + "..."
++
++
++def format_table(
++    rows: cabc.Iterable[cabc.Sequence[t.Any]],
++    headers: cabc.Sequence[str] | None = None,
++    *,
++    align: cabc.Sequence[t.Literal["left", "right", "center"]]
++    | t.Literal["left", "right", "center"] = "left",
++    border: t.Literal["plain", "simple", "grid"] = "simple",
++    max_col_width: int | None = None,
++    padding: int = 1,
++) -> str:
++    """Format tabular data with ANSI-aware column alignment and optional borders.
++
++    :param rows: Iterable of row sequences. ``None`` cells render as ``""``.
++    :param headers: Optional column header sequence.
++    :param align: Alignment string (``'left'``, ``'right'``, ``'center'``) or
++        per-column sequence of alignments.
++    :param border: Border style: ``'plain'``, ``'simple'`` (default), or ``'grid'``.
++    :param max_col_width: Optional maximum visible column width; longer values
++        are truncated with ``'...'``.
++    :param padding: Number of spaces around cell content in ``'grid'`` style
++        and minimum gap multiplier between columns.
++    """
++    if border not in {"plain", "simple", "grid"}:
++        raise ValueError(
++            f"Invalid border style {border!r}; expected 'plain', 'simple', or 'grid'."
++        )
++    if max_col_width is not None and max_col_width < 1:
++        raise ValueError("'max_col_width' must be at least 1.")
++    if padding < 0:
++        raise ValueError("'padding' must be non-negative.")
++
++    raw_rows = [["" if cell is None else str(cell) for cell in row] for row in rows]
++    header_row = ["" if h is None else str(h) for h in headers] if headers is not None else None
++
++    col_count = max(
++        [len(header_row) if header_row is not None else 0, *(len(r) for r in raw_rows)]
++    )
++    if col_count == 0:
++        return ""
++
++    if header_row is not None:
++        header_row = [
++            _truncate_cell(c, max_col_width)
++            for c in header_row + [""] * (col_count - len(header_row))
++        ]
++
++    norm_rows = [
++        [_truncate_cell(c, max_col_width) for c in row + [""] * (col_count - len(row))]
++        for row in raw_rows
++    ]
++
++    if isinstance(align, str):
++        alignments = [align] * col_count
++    else:
++        alignments = list(align)
++        if len(alignments) < col_count:
++            alignments.extend(["left"] * (col_count - len(alignments)))
++        elif len(alignments) > col_count:
++            alignments = alignments[:col_count]
++
++    for a in alignments:
++        if a not in {"left", "right", "center"}:
++            raise ValueError(
++                f"Invalid alignment {a!r}; expected 'left', 'right', or 'center'."
++            )
++
++    all_rows = ([header_row] if header_row is not None else []) + norm_rows
++    widths = [
++        max((term_len(row[i]) for row in all_rows), default=0)
++        for i in range(col_count)
++    ]
++
++    pad_str = " " * padding
++    lines: list[str] = []
++
++    if border == "grid":
++        sep = "+" + "+".join("-" * (w + 2 * padding) for w in widths) + "+"
++        lines.append(sep)
++        if header_row is not None:
++            cells = [
++                f"{pad_str}{_align_cell(header_row[i], widths[i], alignments[i])}{pad_str}"
++                for i in range(col_count)
++            ]
++            lines.append("|" + "|".join(cells) + "|")
++            lines.append(sep)
++        for row in norm_rows:
++            cells = [
++                f"{pad_str}{_align_cell(row[i], widths[i], alignments[i])}{pad_str}"
++                for i in range(col_count)
++            ]
++            lines.append("|" + "|".join(cells) + "|")
++        lines.append(sep)
++        return "\n".join(lines)
++
++    col_gap = " " * max(2, padding * 2)
++    if header_row is not None:
++        lines.append(
++            col_gap.join(
++                _align_cell(header_row[i], widths[i], alignments[i])
++                for i in range(col_count)
++            ).rstrip()
++        )
++        if border == "simple":
++            lines.append(
++                col_gap.join("-" * max(1, widths[i]) for i in range(col_count)).rstrip()
++            )
++    for row in norm_rows:
++        lines.append(
++            col_gap.join(
++                _align_cell(row[i], widths[i], alignments[i]) for i in range(col_count)
++            ).rstrip()
++        )
++
++    return "\n".join(lines)
++
++
++def echo_table(
++    rows: cabc.Iterable[cabc.Sequence[t.Any]],
++    headers: cabc.Sequence[str] | None = None,
++    *,
++    align: cabc.Sequence[t.Literal["left", "right", "center"]]
++    | t.Literal["left", "right", "center"] = "left",
++    border: t.Literal["plain", "simple", "grid"] = "simple",
++    max_col_width: int | None = None,
++    padding: int = 1,
++    file: t.IO[t.Any] | None = None,
++    nl: bool = True,
++    err: bool = False,
++    color: bool | None = None,
++) -> None:
++    """Format a table with :func:`format_table` and output it via :func:`echo`."""
++    rendered = format_table(
++        rows,
++        headers=headers,
++        align=align,
++        border=border,
++        max_col_width=max_col_width,
++        padding=padding,
++    )
++    echo(rendered, file=file, nl=nl, err=err, color=color)
+--- a/src/click/__init__.py
++++ b/src/click/__init__.py
+@@ -42,8 +42,10 @@
+ from .globals import get_current_context as get_current_context
+ from .termui import clear as clear
+ from .termui import confirm as confirm
++from .termui import echo_table as echo_table
+ from .termui import echo_via_pager as echo_via_pager
+ from .termui import edit as edit
++from .termui import format_table as format_table
+ from .termui import get_pager_file as get_pager_file
+ from .termui import getchar as getchar
+ from .termui import launch as launch

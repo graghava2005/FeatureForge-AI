@@ -1,0 +1,279 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app
+configfile: pyproject.toml
+collecting ... collected 29 items
+
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[0-0] FAILED [  3%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512-512] FAILED [  6%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512B-512] FAILED [ 10%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2K-2048] FAILED [ 13%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KB-2048] FAILED [ 17%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KiB-2048] FAILED [ 20%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5KiB-1536] FAILED [ 24%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[ 4 mib -4194304] FAILED [ 27%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1G-1073741824] FAILED [ 31%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5 GiB-1610612736] FAILED [ 34%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2TB-2199023255552] FAILED [ 37%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1PiB-1125899906842624] FAILED [ 41%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[4096-4096] FAILED [ 44%]
+tests/test_feature_bytesize_type.py::test_bytesize_decimal_si_mode_and_explicit_iec FAILED [ 48%]
+tests/test_feature_bytesize_type.py::test_bytesize_bounds_enforcement FAILED [ 51%]
+tests/test_feature_bytesize_type.py::test_bytesize_invalid_constructor_bounds FAILED [ 55%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[] FAILED [ 58%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[   ] FAILED [ 62%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[-10MB] FAILED [ 65%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[NaN] FAILED [ 68%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[inf] FAILED [ 72%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[10XB] FAILED [ 75%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[MB] FAILED [ 79%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[True] FAILED [ 82%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[False] FAILED [ 86%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[12.5] FAILED [ 89%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[bad_val10] FAILED [ 93%]
+tests/test_feature_bytesize_type.py::test_bytesize_cli_integration FAILED [ 96%]
+tests/test_feature_bytesize_type.py::test_bytesize_metadata_and_metavar FAILED [100%]
+
+================================== FAILURES ===================================
+____________________ test_bytesize_binary_conversions[0-0] ____________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_binary_conversions[512-512] __________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_binary_conversions[512B-512] __________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_binary_conversions[2K-2048] __________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_binary_conversions[2KB-2048] __________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_binary_conversions[2KiB-2048] _________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+________________ test_bytesize_binary_conversions[1.5KiB-1536] ________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+______________ test_bytesize_binary_conversions[ 4 mib -4194304] ______________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_______________ test_bytesize_binary_conversions[1G-1073741824] _______________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+____________ test_bytesize_binary_conversions[1.5 GiB-1610612736] _____________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_____________ test_bytesize_binary_conversions[2TB-2199023255552] _____________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+___________ test_bytesize_binary_conversions[1PiB-1125899906842624] ___________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_binary_conversions[4096-4096] _________________
+tests\test_feature_bytesize_type.py:28: in test_bytesize_binary_conversions
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_______________ test_bytesize_decimal_si_mode_and_explicit_iec ________________
+tests\test_feature_bytesize_type.py:33: in test_bytesize_decimal_si_mode_and_explicit_iec
+    bs = click.ByteSize(binary=False)
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+______________________ test_bytesize_bounds_enforcement _______________________
+tests\test_feature_bytesize_type.py:44: in test_bytesize_bounds_enforcement
+    bs = click.ByteSize(min=1024, max=10 * 1024)
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_invalid_constructor_bounds ___________________
+tests\test_feature_bytesize_type.py:60: in test_bytesize_invalid_constructor_bounds
+    click.ByteSize(min=-1)
+    ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+___________________ test_bytesize_rejects_invalid_inputs[] ____________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_rejects_invalid_inputs[   ] __________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_rejects_invalid_inputs[-10MB] _________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_rejects_invalid_inputs[NaN] __________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_rejects_invalid_inputs[inf] __________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_rejects_invalid_inputs[10XB] __________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+__________________ test_bytesize_rejects_invalid_inputs[MB] ___________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_rejects_invalid_inputs[True] __________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_rejects_invalid_inputs[False] _________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_________________ test_bytesize_rejects_invalid_inputs[12.5] __________________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_______________ test_bytesize_rejects_invalid_inputs[bad_val10] _______________
+tests\test_feature_bytesize_type.py:72: in test_bytesize_rejects_invalid_inputs
+    bs = click.ByteSize()
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+________________________ test_bytesize_cli_integration ________________________
+tests\test_feature_bytesize_type.py:79: in test_bytesize_cli_integration
+    @click.option("--limit", type=click.ByteSize(min=1024, max=1024**3), required=True)
+                                  ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+_____________________ test_bytesize_metadata_and_metavar ______________________
+tests\test_feature_bytesize_type.py:94: in test_bytesize_metadata_and_metavar
+    bs = click.ByteSize(min=1024, max=2048, binary=False)
+         ^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_03__YszmxXQ__env_hqzt6ka4\app\src\click\__init__.py:144: in __getattr__
+    raise AttributeError(name)
+E   AttributeError: ByteSize
+=========================== short test summary info ===========================
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[0-0]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512-512]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512B-512]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2K-2048]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KB-2048]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KiB-2048]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5KiB-1536]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[ 4 mib -4194304]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1G-1073741824]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5 GiB-1610612736]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2TB-2199023255552]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1PiB-1125899906842624]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[4096-4096]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_decimal_si_mode_and_explicit_iec
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_bounds_enforcement
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_invalid_constructor_bounds
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[   ]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[-10MB]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[NaN]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[inf]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[10XB]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[MB]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[True]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[False]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[12.5]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[bad_val10]
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_cli_integration - A...
+FAILED tests/test_feature_bytesize_type.py::test_bytesize_metadata_and_metavar
+============================= 29 failed in 1.87s ==============================
+
+=== REGRESSION TESTS ===
+..............................s.s....................................... [ 67%]
+..................................                                       [100%]
+104 passed, 2 skipped in 1.91s
+

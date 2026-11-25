@@ -1,0 +1,6 @@
+[
+  "tests/test_commands.py",
+  "tests/test_chain.py",
+  "tests/test_normalization.py",
+  "tests/test_info_dict.py"
+]

@@ -1,0 +1,9 @@
+[
+  "test_feature_command_aliases.py::test_invoke_subcommand_via_aliases",
+  "test_feature_command_aliases.py::test_group_help_displays_aliases",
+  "test_feature_command_aliases.py::test_alias_collision_raises_value_error",
+  "test_feature_command_aliases.py::test_chained_group_resolves_aliases",
+  "test_feature_command_aliases.py::test_token_normalize_func_applies_to_aliases",
+  "test_feature_command_aliases.py::test_unknown_command_or_alias_still_fails",
+  "test_feature_command_aliases.py::test_command_to_info_dict_aliases_backward_compatible"
+]

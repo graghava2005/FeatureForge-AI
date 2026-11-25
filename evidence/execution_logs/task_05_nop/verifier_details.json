@@ -1,0 +1,10 @@
+{
+  "feature_returncode": 1,
+  "regression_returncode": 0,
+  "reward": 0.0,
+  "feature_test_file": "test_feature_echo_table.py",
+  "regression_targets": [
+    "tests/test_termui.py",
+    "tests/test_imports.py"
+  ]
+}

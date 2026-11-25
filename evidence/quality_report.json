@@ -1,0 +1,268 @@
+{
+  "total_tasks": 5,
+  "valid_tasks": 5,
+  "overall_mutation_score_pct": 100.0,
+  "duration_sec": 128.35,
+  "tasks": [
+    {
+      "task_id": "task_01",
+      "overall_passed": true,
+      "failed_checks": [],
+      "duration_sec": 20.69,
+      "checks": {
+        "1_requirement_test_consistency": {
+          "passed": true,
+          "acceptance_criteria_count": 7,
+          "fail_to_pass_count": 8,
+          "pass_to_pass_count": 3,
+          "task_toml_valid": true,
+          "base_commit_recorded": true,
+          "missing_files": []
+        },
+        "2_feature_coverage": {
+          "passed": true,
+          "base_feature_returncode": 1,
+          "patched_feature_returncode": 0,
+          "base_summary": "8 failed in 1.23s",
+          "patched_summary": "8 passed in 0.15s"
+        },
+        "3_regression_safety": {
+          "passed": true,
+          "base_regression_returncode": 0,
+          "patched_regression_returncode": 0,
+          "regression_targets": [
+            "tests/test_options.py",
+            "tests/test_defaults.py",
+            "tests/test_info_dict.py"
+          ],
+          "patched_regression_summary": "795 passed in 3.53s"
+        },
+        "4_mutation_testing": {
+          "passed": true,
+          "total_mutants": 3,
+          "killed": 3,
+          "survived": 0,
+          "mutation_score_pct": 100.0
+        },
+        "5_test_isolation": {
+          "passed": true,
+          "reversed_order_returncode": 0,
+          "reversed_summary": "8 passed in 0.09s"
+        },
+        "6_deterministic_execution": {
+          "passed": true,
+          "run_1_summary": "8 passed in 0.15s",
+          "run_2_summary": "8 passed in 0.05s"
+        }
+      }
+    },
+    {
+      "task_id": "task_02",
+      "overall_passed": true,
+      "failed_checks": [],
+      "duration_sec": 15.31,
+      "checks": {
+        "1_requirement_test_consistency": {
+          "passed": true,
+          "acceptance_criteria_count": 7,
+          "fail_to_pass_count": 7,
+          "pass_to_pass_count": 4,
+          "task_toml_valid": true,
+          "base_commit_recorded": true,
+          "missing_files": []
+        },
+        "2_feature_coverage": {
+          "passed": true,
+          "base_feature_returncode": 1,
+          "patched_feature_returncode": 0,
+          "base_summary": "7 failed in 0.94s",
+          "patched_summary": "7 passed in 0.14s"
+        },
+        "3_regression_safety": {
+          "passed": true,
+          "base_regression_returncode": 0,
+          "patched_regression_returncode": 0,
+          "regression_targets": [
+            "tests/test_commands.py",
+            "tests/test_chain.py",
+            "tests/test_normalization.py",
+            "tests/test_info_dict.py"
+          ],
+          "patched_regression_summary": "160 passed, 1 xfailed in 1.02s"
+        },
+        "4_mutation_testing": {
+          "passed": true,
+          "total_mutants": 3,
+          "killed": 3,
+          "survived": 0,
+          "mutation_score_pct": 100.0
+        },
+        "5_test_isolation": {
+          "passed": true,
+          "reversed_order_returncode": 0,
+          "reversed_summary": "7 passed in 0.15s"
+        },
+        "6_deterministic_execution": {
+          "passed": true,
+          "run_1_summary": "7 passed in 0.14s",
+          "run_2_summary": "7 passed in 0.10s"
+        }
+      }
+    },
+    {
+      "task_id": "task_03",
+      "overall_passed": true,
+      "failed_checks": [],
+      "duration_sec": 14.94,
+      "checks": {
+        "1_requirement_test_consistency": {
+          "passed": true,
+          "acceptance_criteria_count": 7,
+          "fail_to_pass_count": 7,
+          "pass_to_pass_count": 2,
+          "task_toml_valid": true,
+          "base_commit_recorded": true,
+          "missing_files": []
+        },
+        "2_feature_coverage": {
+          "passed": true,
+          "base_feature_returncode": 1,
+          "patched_feature_returncode": 0,
+          "base_summary": "29 failed in 0.76s",
+          "patched_summary": "29 passed in 0.17s"
+        },
+        "3_regression_safety": {
+          "passed": true,
+          "base_regression_returncode": 0,
+          "patched_regression_returncode": 0,
+          "regression_targets": [
+            "tests/test_types/",
+            "tests/test_info_dict.py"
+          ],
+          "patched_regression_summary": "104 passed, 2 skipped in 1.08s"
+        },
+        "4_mutation_testing": {
+          "passed": true,
+          "total_mutants": 3,
+          "killed": 3,
+          "survived": 0,
+          "mutation_score_pct": 100.0
+        },
+        "5_test_isolation": {
+          "passed": true,
+          "reversed_order_returncode": 0,
+          "reversed_summary": "29 passed in 0.18s"
+        },
+        "6_deterministic_execution": {
+          "passed": true,
+          "run_1_summary": "29 passed in 0.17s",
+          "run_2_summary": "29 passed in 0.12s"
+        }
+      }
+    },
+    {
+      "task_id": "task_04",
+      "overall_passed": true,
+      "failed_checks": [],
+      "duration_sec": 17.37,
+      "checks": {
+        "1_requirement_test_consistency": {
+          "passed": true,
+          "acceptance_criteria_count": 7,
+          "fail_to_pass_count": 7,
+          "pass_to_pass_count": 4,
+          "task_toml_valid": true,
+          "base_commit_recorded": true,
+          "missing_files": []
+        },
+        "2_feature_coverage": {
+          "passed": true,
+          "base_feature_returncode": 1,
+          "patched_feature_returncode": 0,
+          "base_summary": "7 failed in 0.44s",
+          "patched_summary": "7 passed in 0.10s"
+        },
+        "3_regression_safety": {
+          "passed": true,
+          "base_regression_returncode": 0,
+          "patched_regression_returncode": 0,
+          "regression_targets": [
+            "tests/test_basic.py",
+            "tests/test_termui.py",
+            "tests/test_compat.py",
+            "tests/test_context.py"
+          ],
+          "patched_regression_summary": "569 passed, 25 skipped in 2.92s"
+        },
+        "4_mutation_testing": {
+          "passed": true,
+          "total_mutants": 3,
+          "killed": 3,
+          "survived": 0,
+          "mutation_score_pct": 100.0
+        },
+        "5_test_isolation": {
+          "passed": true,
+          "reversed_order_returncode": 0,
+          "reversed_summary": "7 passed in 0.12s"
+        },
+        "6_deterministic_execution": {
+          "passed": true,
+          "run_1_summary": "7 passed in 0.10s",
+          "run_2_summary": "7 passed in 0.04s"
+        }
+      }
+    },
+    {
+      "task_id": "task_05",
+      "overall_passed": true,
+      "failed_checks": [],
+      "duration_sec": 18.08,
+      "checks": {
+        "1_requirement_test_consistency": {
+          "passed": true,
+          "acceptance_criteria_count": 8,
+          "fail_to_pass_count": 7,
+          "pass_to_pass_count": 2,
+          "task_toml_valid": true,
+          "base_commit_recorded": true,
+          "missing_files": []
+        },
+        "2_feature_coverage": {
+          "passed": true,
+          "base_feature_returncode": 1,
+          "patched_feature_returncode": 0,
+          "base_summary": "7 failed in 0.40s",
+          "patched_summary": "7 passed in 0.09s"
+        },
+        "3_regression_safety": {
+          "passed": true,
+          "base_regression_returncode": 0,
+          "patched_regression_returncode": 0,
+          "regression_targets": [
+            "tests/test_termui.py",
+            "tests/test_imports.py"
+          ],
+          "patched_regression_summary": "263 passed, 25 skipped in 2.20s"
+        },
+        "4_mutation_testing": {
+          "passed": true,
+          "total_mutants": 3,
+          "killed": 3,
+          "survived": 0,
+          "mutation_score_pct": 100.0
+        },
+        "5_test_isolation": {
+          "passed": true,
+          "reversed_order_returncode": 0,
+          "reversed_summary": "7 passed in 0.15s"
+        },
+        "6_deterministic_execution": {
+          "passed": true,
+          "run_1_summary": "7 passed in 0.09s",
+          "run_2_summary": "7 passed in 0.07s"
+        }
+      }
+    }
+  ]
+}

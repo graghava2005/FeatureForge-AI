@@ -1,0 +1,9 @@
+[
+  "test_feature_bytesize_type.py::test_bytesize_binary_conversions",
+  "test_feature_bytesize_type.py::test_bytesize_decimal_si_mode_and_explicit_iec",
+  "test_feature_bytesize_type.py::test_bytesize_bounds_enforcement",
+  "test_feature_bytesize_type.py::test_bytesize_invalid_constructor_bounds",
+  "test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs",
+  "test_feature_bytesize_type.py::test_bytesize_cli_integration",
+  "test_feature_bytesize_type.py::test_bytesize_metadata_and_metavar"
+]

@@ -1,0 +1,45 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_03__QebGSB3__env_ti5mpnff\app
+configfile: pyproject.toml
+collecting ... collected 29 items
+
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[0-0] PASSED [  3%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512-512] PASSED [  6%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512B-512] PASSED [ 10%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2K-2048] PASSED [ 13%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KB-2048] PASSED [ 17%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KiB-2048] PASSED [ 20%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5KiB-1536] PASSED [ 24%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[ 4 mib -4194304] PASSED [ 27%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1G-1073741824] PASSED [ 31%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5 GiB-1610612736] PASSED [ 34%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2TB-2199023255552] PASSED [ 37%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1PiB-1125899906842624] PASSED [ 41%]
+tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[4096-4096] PASSED [ 44%]
+tests/test_feature_bytesize_type.py::test_bytesize_decimal_si_mode_and_explicit_iec PASSED [ 48%]
+tests/test_feature_bytesize_type.py::test_bytesize_bounds_enforcement PASSED [ 51%]
+tests/test_feature_bytesize_type.py::test_bytesize_invalid_constructor_bounds PASSED [ 55%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[] PASSED [ 58%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[   ] PASSED [ 62%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[-10MB] PASSED [ 65%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[NaN] PASSED [ 68%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[inf] PASSED [ 72%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[10XB] PASSED [ 75%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[MB] PASSED [ 79%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[True] PASSED [ 82%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[False] PASSED [ 86%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[12.5] PASSED [ 89%]
+tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[bad_val10] PASSED [ 93%]
+tests/test_feature_bytesize_type.py::test_bytesize_cli_integration PASSED [ 96%]
+tests/test_feature_bytesize_type.py::test_bytesize_metadata_and_metavar PASSED [100%]
+
+============================= 29 passed in 0.51s ==============================
+
+=== REGRESSION TESTS ===
+..............................s.s....................................... [ 67%]
+..................................                                       [100%]
+104 passed, 2 skipped in 1.96s
+

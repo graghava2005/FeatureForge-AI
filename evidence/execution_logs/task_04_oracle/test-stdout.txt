@@ -1,0 +1,30 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_04__brDZkG6__env_ehkijbli\app
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+tests/test_feature_no_color_env.py::test_no_color_disables_color_even_on_tty PASSED [ 14%]
+tests/test_feature_no_color_env.py::test_empty_no_color_has_no_effect PASSED [ 28%]
+tests/test_feature_no_color_env.py::test_force_color_enables_color_on_non_tty PASSED [ 42%]
+tests/test_feature_no_color_env.py::test_force_color_zero_or_false_does_not_force PASSED [ 57%]
+tests/test_feature_no_color_env.py::test_no_color_overrides_force_color PASSED [ 71%]
+tests/test_feature_no_color_env.py::test_explicit_color_argument_overrides_env_vars PASSED [ 85%]
+tests/test_feature_no_color_env.py::test_context_color_overrides_env_vars PASSED [100%]
+
+============================== 7 passed in 0.28s ==============================
+
+=== REGRESSION TESTS ===
+........................................................................ [ 12%]
+........................................................................ [ 24%]
+..............ss..........................ssss.......................... [ 36%]
+......ssssssssssss......................sssssss......................... [ 48%]
+........................................................................ [ 60%]
+........................................................................ [ 72%]
+........................................................................ [ 84%]
+........................................................................ [ 96%]
+..................                                                       [100%]
+569 passed, 25 skipped in 3.41s
+

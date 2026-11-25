@@ -1,0 +1,24 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_02__6qbaiPv__env_dvhnt967\app
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+tests/test_feature_command_aliases.py::test_invoke_subcommand_via_aliases PASSED [ 14%]
+tests/test_feature_command_aliases.py::test_group_help_displays_aliases PASSED [ 28%]
+tests/test_feature_command_aliases.py::test_alias_collision_raises_value_error PASSED [ 42%]
+tests/test_feature_command_aliases.py::test_chained_group_resolves_aliases PASSED [ 57%]
+tests/test_feature_command_aliases.py::test_token_normalize_func_applies_to_aliases PASSED [ 71%]
+tests/test_feature_command_aliases.py::test_unknown_command_or_alias_still_fails PASSED [ 85%]
+tests/test_feature_command_aliases.py::test_command_to_info_dict_aliases_backward_compatible PASSED [100%]
+
+============================== 7 passed in 0.19s ==============================
+
+=== REGRESSION TESTS ===
+........................................................................ [ 44%]
+...............................................x........................ [ 89%]
+.................                                                        [100%]
+160 passed, 1 xfailed in 2.27s
+

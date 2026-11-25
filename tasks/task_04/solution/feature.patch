@@ -1,0 +1,58 @@
+--- a/src/click/_compat.py
++++ b/src/click/_compat.py
+@@ -499,16 +499,31 @@
+     return stream.__class__.__module__.startswith("ipykernel.")
+ 
+ 
++def _resolve_env_color() -> bool | None:
++    """Return ``False`` when ``NO_COLOR`` is non-empty, ``True`` when
++    ``FORCE_COLOR`` is active, or ``None`` to defer to TTY detection.
++    """
++    if os.environ.get("NO_COLOR", ""):
++        return False
++    force_color = os.environ.get("FORCE_COLOR", "")
++    if force_color and force_color.strip().lower() not in {"0", "false"}:
++        return True
++    return None
++
++
+ def should_strip_ansi(
+     stream: t.IO[t.Any] | None = None, color: bool | None = None
+ ) -> bool:
+     if color is None:
+-        if stream is None:
+-            stream = sys.stdin
+-        elif hasattr(stream, "color"):
++        if stream is not None and hasattr(stream, "color"):
+             # ._termui_impl._PagerWriter handles stripping ansi itself,
+             # so we don't need to strip it here
+             return False
++        env_color = _resolve_env_color()
++        if env_color is not None:
++            return not env_color
++        if stream is None:
++            stream = sys.stdin
+         return not isatty(stream) and not _is_jupyter_kernel_output(stream)
+     return not color
+ 
+--- a/src/click/globals.py
++++ b/src/click/globals.py
+@@ -2,6 +2,8 @@
+ 
+ import typing as t
+ from threading import local
++
++from ._compat import _resolve_env_color
+ 
+ if t.TYPE_CHECKING:
+     from .core import Context
+@@ -61,7 +63,7 @@
+ 
+     ctx = get_current_context(silent=True)
+ 
+-    if ctx is not None:
++    if ctx is not None and ctx.color is not None:
+         return ctx.color
+ 
+-    return None
++    return _resolve_env_color()

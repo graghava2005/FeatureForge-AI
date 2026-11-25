@@ -1,0 +1,10 @@
+[
+  "test_feature_option_constraints.py::test_conflicts_with_rejects_both_flags",
+  "test_feature_option_constraints.py::test_conflicts_with_allows_defaults_without_false_positive",
+  "test_feature_option_constraints.py::test_asymmetric_conflicts_with_works_regardless_of_order",
+  "test_feature_option_constraints.py::test_requires_fails_when_dependency_missing_and_passes_when_given",
+  "test_feature_option_constraints.py::test_requires_satisfied_by_default_map_and_non_none_default",
+  "test_feature_option_constraints.py::test_envvar_conflict_and_requires_detection",
+  "test_feature_option_constraints.py::test_help_and_resilient_parsing_bypass_constraints",
+  "test_feature_option_constraints.py::test_option_to_info_dict_with_and_without_constraints"
+]

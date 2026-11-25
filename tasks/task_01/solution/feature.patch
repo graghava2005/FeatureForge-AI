@@ -1,0 +1,127 @@
+--- a/src/click/core.py
++++ b/src/click/core.py
+@@ -1416,9 +1416,77 @@
+                 ).format(args=" ".join(map(str, args)))
+             )
+ 
++        if not ctx.resilient_parsing:
++            self._validate_option_constraints(ctx)
++
+         ctx.args = args
+         ctx._opt_prefixes.update(parser._opt_prefixes)
+         return args
++
++    def _validate_option_constraints(self, ctx: Context) -> None:
++        params_by_name: dict[str, Parameter] = {
++            param.name: param
++            for param in self.get_params(ctx)
++            if param.name is not None
++        }
++        explicit_sources = {
++            ParameterSource.COMMANDLINE,
++            ParameterSource.ENVIRONMENT,
++        }
++
++        def _is_explicit(param_name: str) -> bool:
++            return ctx.get_parameter_source(param_name) in explicit_sources
++
++        def _is_satisfied(param_name: str) -> bool:
++            source = ctx.get_parameter_source(param_name)
++            if source in (
++                ParameterSource.COMMANDLINE,
++                ParameterSource.ENVIRONMENT,
++                ParameterSource.DEFAULT_MAP,
++            ):
++                return True
++            if source == ParameterSource.DEFAULT:
++                val = ctx.params.get(param_name)
++                return val is not None and val is not False and val != () and val != []
++            return False
++
++        for param in self.get_params(ctx):
++            if not isinstance(param, Option) or param.name is None:
++                continue
++            if not _is_explicit(param.name):
++                continue
++
++            for other_name in param.conflicts_with:
++                if other_name != param.name and _is_explicit(other_name):
++                    other_param = params_by_name.get(other_name)
++                    other_hint = (
++                        other_param.get_error_hint(ctx)
++                        if other_param is not None
++                        else f"'{other_name}'"
++                    )
++                    raise UsageError(
++                        _("Illegal usage: {opt} is mutually exclusive with {other}.").format(
++                            opt=param.get_error_hint(ctx),
++                            other=other_hint,
++                        ),
++                        ctx=ctx,
++                    )
++
++            for req_name in param.requires:
++                if req_name != param.name and not _is_satisfied(req_name):
++                    req_param = params_by_name.get(req_name)
++                    req_hint = (
++                        req_param.get_error_hint(ctx)
++                        if req_param is not None
++                        else f"'{req_name}'"
++                    )
++                    raise UsageError(
++                        _("Illegal usage: {opt} requires {req}.").format(
++                            opt=param.get_error_hint(ctx),
++                            req=req_hint,
++                        ),
++                        ctx=ctx,
++                    )
+ 
+     def invoke(self, ctx: Context) -> t.Any:
+         """Given a context, this invokes the attached callback (if it exists)
+@@ -3129,6 +3197,8 @@
+     show_default: bool | str | None
+     show_choices: bool
+     show_envvar: bool
++    conflicts_with: tuple[str, ...]
++    requires: tuple[str, ...]
+ 
+     def __init__(
+         self,
+@@ -3149,6 +3219,8 @@
+         show_choices: bool = True,
+         show_envvar: bool = False,
+         deprecated: bool | str = False,
++        conflicts_with: cabc.Sequence[str] | None = None,
++        requires: cabc.Sequence[str] | None = None,
+         **attrs: t.Any,
+     ) -> None:
+         super().__init__(
+@@ -3203,6 +3275,12 @@
+         self.show_default = show_default
+         self.show_choices = show_choices
+         self.show_envvar = show_envvar
++        self.conflicts_with = tuple(
++            dict.fromkeys(self._normalize_constraint_name(n) for n in (conflicts_with or ()))
++        )
++        self.requires = tuple(
++            dict.fromkeys(self._normalize_constraint_name(n) for n in (requires or ()))
++        )
+ 
+         # Phase 5: validate. Raises on illegal kwarg combinations.
+         self._validate(prompt, deprecated)
+@@ -3367,7 +3445,15 @@
+             count=self.count,
+             hidden=self.hidden,
+         )
++        if self.conflicts_with:
++            info_dict["conflicts_with"] = list(self.conflicts_with)
++        if self.requires:
++            info_dict["requires"] = list(self.requires)
+         return info_dict
++
++    @staticmethod
++    def _normalize_constraint_name(name: str) -> str:
++        return name.strip().lstrip("-").replace("-", "_")
+ 
+     def get_default(
+         self, ctx: Context, call: bool = True

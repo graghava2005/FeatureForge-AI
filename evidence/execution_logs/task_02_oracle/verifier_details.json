@@ -1,0 +1,12 @@
+{
+  "feature_returncode": 0,
+  "regression_returncode": 0,
+  "reward": 1.0,
+  "feature_test_file": "test_feature_command_aliases.py",
+  "regression_targets": [
+    "tests/test_commands.py",
+    "tests/test_chain.py",
+    "tests/test_normalization.py",
+    "tests/test_info_dict.py"
+  ]
+}

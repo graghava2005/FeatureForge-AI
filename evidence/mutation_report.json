@@ -1,0 +1,215 @@
+{
+  "total_tasks": 5,
+  "total_mutants": 15,
+  "total_killed": 15,
+  "total_survived": 0,
+  "overall_mutation_score_pct": 100.0,
+  "duration_sec": 41.93,
+  "tasks": [
+    {
+      "task_id": "task_01",
+      "status": "PASSED",
+      "total_mutants": 3,
+      "killed": 3,
+      "survived": 0,
+      "mutation_score_pct": 100.0,
+      "duration_sec": 10.64,
+      "mutants": [
+        {
+          "id": "M1_disable_conflicts_with",
+          "file": "src/click/core.py",
+          "description": "Disable mutual-exclusivity check in _validate_option_constraints",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 3.6,
+          "pytest_summary": "1 failed in 0.11s"
+        },
+        {
+          "id": "M2_disable_requires",
+          "file": "src/click/core.py",
+          "description": "Disable required-partner check in _validate_option_constraints",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 3.03,
+          "pytest_summary": "1 failed, 3 passed in 0.14s"
+        },
+        {
+          "id": "M3_skip_constraint_name_norm",
+          "file": "src/click/core.py",
+          "description": "Skip dash-to-underscore normalization for CLI-style constraint names",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 3.53,
+          "pytest_summary": "1 failed, 2 passed in 0.21s"
+        }
+      ]
+    },
+    {
+      "task_id": "task_02",
+      "status": "PASSED",
+      "total_mutants": 3,
+      "killed": 3,
+      "survived": 0,
+      "mutation_score_pct": 100.0,
+      "duration_sec": 7.98,
+      "mutants": [
+        {
+          "id": "M1_disable_alias_lookup",
+          "file": "src/click/core.py",
+          "description": "Disable alias match inside Group._resolve_alias",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 3.33,
+          "pytest_summary": "1 failed in 0.18s"
+        },
+        {
+          "id": "M2_disable_collision_check",
+          "file": "src/click/core.py",
+          "description": "Bypass alias collision validation in Group.add_command",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.33,
+          "pytest_summary": "1 failed, 2 passed in 0.09s"
+        },
+        {
+          "id": "M3_omit_help_aliases",
+          "file": "src/click/core.py",
+          "description": "Hide command aliases in Group.format_commands help listing",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 1.99,
+          "pytest_summary": "1 failed, 1 passed in 0.06s"
+        }
+      ]
+    },
+    {
+      "task_id": "task_03",
+      "status": "PASSED",
+      "total_mutants": 3,
+      "killed": 3,
+      "survived": 0,
+      "mutation_score_pct": 100.0,
+      "duration_sec": 6.25,
+      "mutants": [
+        {
+          "id": "M1_ignore_si_decimal_mode",
+          "file": "src/click/types.py",
+          "description": "Force binary base 1024 even when binary=False",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.02,
+          "pytest_summary": "1 failed, 13 passed in 0.10s"
+        },
+        {
+          "id": "M2_skip_min_bound",
+          "file": "src/click/types.py",
+          "description": "Disable minimum byte-size bound validation",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.13,
+          "pytest_summary": "1 failed, 14 passed in 0.17s"
+        },
+        {
+          "id": "M3_accept_booleans",
+          "file": "src/click/types.py",
+          "description": "Allow Python bool values to pass ByteSize.convert as ints",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 1.86,
+          "pytest_summary": "1 failed, 27 passed in 0.11s"
+        }
+      ]
+    },
+    {
+      "task_id": "task_04",
+      "status": "PASSED",
+      "total_mutants": 3,
+      "killed": 3,
+      "survived": 0,
+      "mutation_score_pct": 100.0,
+      "duration_sec": 6.45,
+      "mutants": [
+        {
+          "id": "M1_ignore_no_color",
+          "file": "src/click/_compat.py",
+          "description": "Ignore NO_COLOR environment variable",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.2,
+          "pytest_summary": "1 failed in 0.15s"
+        },
+        {
+          "id": "M2_ignore_force_color",
+          "file": "src/click/_compat.py",
+          "description": "Ignore FORCE_COLOR environment variable",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.08,
+          "pytest_summary": "1 failed, 1 passed in 0.08s"
+        },
+        {
+          "id": "M3_skip_context_color_override",
+          "file": "src/click/globals.py",
+          "description": "Ignore explicit ctx.color when resolve_color_default runs",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.0,
+          "pytest_summary": "1 failed, 6 passed in 0.08s"
+        }
+      ]
+    },
+    {
+      "task_id": "task_05",
+      "status": "PASSED",
+      "total_mutants": 3,
+      "killed": 3,
+      "survived": 0,
+      "mutation_score_pct": 100.0,
+      "duration_sec": 7.71,
+      "mutants": [
+        {
+          "id": "M1_break_ansi_width",
+          "file": "src/click/termui.py",
+          "description": "Use raw len(text) instead of ANSI-aware term_len in _align_cell",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.68,
+          "pytest_summary": "1 failed, 2 passed in 0.15s"
+        },
+        {
+          "id": "M2_disable_truncation",
+          "file": "src/click/termui.py",
+          "description": "Skip max_col_width cell truncation",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.21,
+          "pytest_summary": "1 failed, 4 passed in 0.05s"
+        },
+        {
+          "id": "M3_break_grid_border",
+          "file": "src/click/termui.py",
+          "description": "Disable grid border rendering branch",
+          "status": "KILLED",
+          "killed": true,
+          "pytest_returncode": 1,
+          "duration_sec": 2.42,
+          "pytest_summary": "1 failed, 1 passed in 0.09s"
+        }
+      ]
+    }
+  ]
+}

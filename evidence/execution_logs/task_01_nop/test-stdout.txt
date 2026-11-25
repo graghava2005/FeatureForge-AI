@@ -1,0 +1,120 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app
+configfile: pyproject.toml
+collecting ... collected 8 items
+
+tests/test_feature_option_constraints.py::test_conflicts_with_rejects_both_flags FAILED [ 12%]
+tests/test_feature_option_constraints.py::test_conflicts_with_allows_defaults_without_false_positive FAILED [ 25%]
+tests/test_feature_option_constraints.py::test_asymmetric_conflicts_with_works_regardless_of_order FAILED [ 37%]
+tests/test_feature_option_constraints.py::test_requires_fails_when_dependency_missing_and_passes_when_given FAILED [ 50%]
+tests/test_feature_option_constraints.py::test_requires_satisfied_by_default_map_and_non_none_default FAILED [ 62%]
+tests/test_feature_option_constraints.py::test_envvar_conflict_and_requires_detection FAILED [ 75%]
+tests/test_feature_option_constraints.py::test_help_and_resilient_parsing_bypass_constraints FAILED [ 87%]
+tests/test_feature_option_constraints.py::test_option_to_info_dict_with_and_without_constraints FAILED [100%]
+
+================================== FAILURES ===================================
+___________________ test_conflicts_with_rejects_both_flags ____________________
+tests\test_feature_option_constraints.py:10: in test_conflicts_with_rejects_both_flags
+    @click.option("--csv", is_flag=True, conflicts_with=["as_json"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'conflicts_with'
+_________ test_conflicts_with_allows_defaults_without_false_positive __________
+tests\test_feature_option_constraints.py:27: in test_conflicts_with_allows_defaults_without_false_positive
+    @click.option("--quiet", is_flag=True, default=False, conflicts_with=["verbose"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'conflicts_with'
+__________ test_asymmetric_conflicts_with_works_regardless_of_order ___________
+tests\test_feature_option_constraints.py:39: in test_asymmetric_conflicts_with_works_regardless_of_order
+    @click.option("--fast", is_flag=True, conflicts_with=["--dry-run"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'conflicts_with'
+______ test_requires_fails_when_dependency_missing_and_passes_when_given ______
+tests\test_feature_option_constraints.py:55: in test_requires_fails_when_dependency_missing_and_passes_when_given
+    @click.option("--ssl", is_flag=True, requires=["ssl_cert", "ssl-key"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'requires'. Did you mean 'required'?
+_________ test_requires_satisfied_by_default_map_and_non_none_default _________
+tests\test_feature_option_constraints.py:75: in test_requires_satisfied_by_default_map_and_non_none_default
+    @click.option("--tls", is_flag=True, requires=["ca_bundle", "token"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'requires'. Did you mean 'required'?
+_________________ test_envvar_conflict_and_requires_detection _________________
+tests\test_feature_option_constraints.py:93: in test_envvar_conflict_and_requires_detection
+    @click.option("--remote", envvar="APP_REMOTE", requires=["token"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'requires'. Did you mean 'required'?
+_____________ test_help_and_resilient_parsing_bypass_constraints ______________
+tests\test_feature_option_constraints.py:117: in test_help_and_resilient_parsing_bypass_constraints
+    @click.option("--b", is_flag=True, requires=["missing_partner"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\decorators.py:370: in decorator
+    _param_memo(f, cls(param_decls, **attrs))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'requires'. Did you mean 'required'?
+____________ test_option_to_info_dict_with_and_without_constraints ____________
+tests\test_feature_option_constraints.py:137: in test_option_to_info_dict_with_and_without_constraints
+    constrained_opt = click.Option(
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\app\src\click\core.py:3154: in __init__
+    super().__init__(
+E   TypeError: Parameter.__init__() got an unexpected keyword argument 'conflicts_with'
+=========================== short test summary info ===========================
+FAILED tests/test_feature_option_constraints.py::test_conflicts_with_rejects_both_flags
+FAILED tests/test_feature_option_constraints.py::test_conflicts_with_allows_defaults_without_false_positive
+FAILED tests/test_feature_option_constraints.py::test_asymmetric_conflicts_with_works_regardless_of_order
+FAILED tests/test_feature_option_constraints.py::test_requires_fails_when_dependency_missing_and_passes_when_given
+FAILED tests/test_feature_option_constraints.py::test_requires_satisfied_by_default_map_and_non_none_default
+FAILED tests/test_feature_option_constraints.py::test_envvar_conflict_and_requires_detection
+FAILED tests/test_feature_option_constraints.py::test_help_and_resilient_parsing_bypass_constraints
+FAILED tests/test_feature_option_constraints.py::test_option_to_info_dict_with_and_without_constraints
+============================== 8 failed in 2.56s ==============================
+
+=== REGRESSION TESTS ===
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 27%]
+........................................................................ [ 36%]
+........................................................................ [ 45%]
+........................................................................ [ 54%]
+........................................................................ [ 63%]
+........................................................................ [ 72%]
+........................................................................ [ 81%]
+........................................................................ [ 90%]
+........................................................................ [ 99%]
+...                                                                      [100%]
+795 passed in 5.85s
+

@@ -1,0 +1,104 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+tests/test_feature_command_aliases.py::test_invoke_subcommand_via_aliases FAILED [ 14%]
+tests/test_feature_command_aliases.py::test_group_help_displays_aliases FAILED [ 28%]
+tests/test_feature_command_aliases.py::test_alias_collision_raises_value_error FAILED [ 42%]
+tests/test_feature_command_aliases.py::test_chained_group_resolves_aliases FAILED [ 57%]
+tests/test_feature_command_aliases.py::test_token_normalize_func_applies_to_aliases FAILED [ 71%]
+tests/test_feature_command_aliases.py::test_unknown_command_or_alias_still_fails FAILED [ 85%]
+tests/test_feature_command_aliases.py::test_command_to_info_dict_aliases_backward_compatible FAILED [100%]
+
+================================== FAILURES ===================================
+_____________________ test_invoke_subcommand_via_aliases ______________________
+tests\test_feature_command_aliases.py:14: in test_invoke_subcommand_via_aliases
+    @cli.command(aliases=["co", "chk"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\core.py:1876: in decorator
+    cmd: Command = command(*args, **kwargs)(f)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\decorators.py:244: in decorator
+    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+______________________ test_group_help_displays_aliases _______________________
+tests\test_feature_command_aliases.py:32: in test_group_help_displays_aliases
+    @cli.command(aliases=["d", "dep"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\core.py:1876: in decorator
+    cmd: Command = command(*args, **kwargs)(f)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\decorators.py:244: in decorator
+    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+___________________ test_alias_collision_raises_value_error ___________________
+tests\test_feature_command_aliases.py:53: in test_alias_collision_raises_value_error
+    @cli.command(aliases=["rm"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\core.py:1876: in decorator
+    cmd: Command = command(*args, **kwargs)(f)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\decorators.py:244: in decorator
+    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+_____________________ test_chained_group_resolves_aliases _____________________
+tests\test_feature_command_aliases.py:78: in test_chained_group_resolves_aliases
+    @cli.command(aliases=["b"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\core.py:1876: in decorator
+    cmd: Command = command(*args, **kwargs)(f)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\decorators.py:244: in decorator
+    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+________________ test_token_normalize_func_applies_to_aliases _________________
+tests\test_feature_command_aliases.py:97: in test_token_normalize_func_applies_to_aliases
+    @cli.command(aliases=["LS"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\core.py:1876: in decorator
+    cmd: Command = command(*args, **kwargs)(f)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\decorators.py:244: in decorator
+    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+__________________ test_unknown_command_or_alias_still_fails __________________
+tests\test_feature_command_aliases.py:112: in test_unknown_command_or_alias_still_fails
+    @cli.command(aliases=["co"])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\core.py:1876: in decorator
+    cmd: Command = command(*args, **kwargs)(f)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\G Raghava\AppData\Local\Temp\harbor_local_task_02__L3foSaQ__env_ejtirzag\app\src\click\decorators.py:244: in decorator
+    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+____________ test_command_to_info_dict_aliases_backward_compatible ____________
+tests\test_feature_command_aliases.py:124: in test_command_to_info_dict_aliases_backward_compatible
+    aliased = click.Command("run", aliases=["r", "exec"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'
+=========================== short test summary info ===========================
+FAILED tests/test_feature_command_aliases.py::test_invoke_subcommand_via_aliases
+FAILED tests/test_feature_command_aliases.py::test_group_help_displays_aliases
+FAILED tests/test_feature_command_aliases.py::test_alias_collision_raises_value_error
+FAILED tests/test_feature_command_aliases.py::test_chained_group_resolves_aliases
+FAILED tests/test_feature_command_aliases.py::test_token_normalize_func_applies_to_aliases
+FAILED tests/test_feature_command_aliases.py::test_unknown_command_or_alias_still_fails
+FAILED tests/test_feature_command_aliases.py::test_command_to_info_dict_aliases_backward_compatible
+============================== 7 failed in 2.39s ==============================
+
+=== REGRESSION TESTS ===
+........................................................................ [ 44%]
+...............................................x........................ [ 89%]
+.................                                                        [100%]
+160 passed, 1 xfailed in 2.58s
+

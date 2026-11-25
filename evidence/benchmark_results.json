@@ -1,0 +1,653 @@
+{
+  "timestamp_utc": "2026-11-25T07:47:03.869516+00:00",
+  "environment_check": {
+    "harbor_exe": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe",
+    "harbor_version": "0.25.0",
+    "harbor_0_25_ok": true,
+    "docker_available": false,
+    "docker_status": "docker CLI not found in PATH",
+    "local_worktree_env": "core.harbor_local_env:LocalWorktreeEnvironment"
+  },
+  "execution_backend": "harbor-cli-local-worktree",
+  "docker_default_probe": {
+    "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_01 -a nop -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\docker_probe --no-delete -y",
+    "returncode": 1,
+    "duration_sec": 8.4,
+    "stdout_tail": "",
+    "stderr_tail": "Docker is not installed or not on PATH. Please install Docker and try again.\n"
+  },
+  "dry_run_preflights": {
+    "task_01": {
+      "returncode": 0,
+      "passed": true,
+      "stdout": "         nop agent auth resolution (dry run)         \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Setting             \u2502 Value                       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Parsed provider     \u2502 Not resolved                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Resolved model      \u2502 Agent default               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Endpoint            \u2502 Agent/SDK default (unknown) \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API format          \u2502 Agent/SDK default           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API key precedence  \u2502 No agent auth resolution    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Base URL precedence \u2502 No agent auth resolution    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nNo agent auth resolution\nKeys and model availability were not verified. Native login or other \nauthentication may apply when no API key is found.\nDry run OK \u2014 1 trial(s); nothing was run.\n",
+      "stderr": "Skipped: agents[0]: kwargs validation; agent has no options schema.\n"
+    },
+    "task_02": {
+      "returncode": 0,
+      "passed": true,
+      "stdout": "         nop agent auth resolution (dry run)         \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Setting             \u2502 Value                       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Parsed provider     \u2502 Not resolved                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Resolved model      \u2502 Agent default               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Endpoint            \u2502 Agent/SDK default (unknown) \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API format          \u2502 Agent/SDK default           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API key precedence  \u2502 No agent auth resolution    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Base URL precedence \u2502 No agent auth resolution    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nNo agent auth resolution\nKeys and model availability were not verified. Native login or other \nauthentication may apply when no API key is found.\nDry run OK \u2014 1 trial(s); nothing was run.\n",
+      "stderr": "Skipped: agents[0]: kwargs validation; agent has no options schema.\n"
+    },
+    "task_03": {
+      "returncode": 0,
+      "passed": true,
+      "stdout": "         nop agent auth resolution (dry run)         \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Setting             \u2502 Value                       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Parsed provider     \u2502 Not resolved                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Resolved model      \u2502 Agent default               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Endpoint            \u2502 Agent/SDK default (unknown) \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API format          \u2502 Agent/SDK default           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API key precedence  \u2502 No agent auth resolution    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Base URL precedence \u2502 No agent auth resolution    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nNo agent auth resolution\nKeys and model availability were not verified. Native login or other \nauthentication may apply when no API key is found.\nDry run OK \u2014 1 trial(s); nothing was run.\n",
+      "stderr": "Skipped: agents[0]: kwargs validation; agent has no options schema.\n"
+    },
+    "task_04": {
+      "returncode": 0,
+      "passed": true,
+      "stdout": "         nop agent auth resolution (dry run)         \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Setting             \u2502 Value                       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Parsed provider     \u2502 Not resolved                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Resolved model      \u2502 Agent default               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Endpoint            \u2502 Agent/SDK default (unknown) \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API format          \u2502 Agent/SDK default           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API key precedence  \u2502 No agent auth resolution    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Base URL precedence \u2502 No agent auth resolution    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nNo agent auth resolution\nKeys and model availability were not verified. Native login or other \nauthentication may apply when no API key is found.\nDry run OK \u2014 1 trial(s); nothing was run.\n",
+      "stderr": "Skipped: agents[0]: kwargs validation; agent has no options schema.\n"
+    },
+    "task_05": {
+      "returncode": 0,
+      "passed": true,
+      "stdout": "         nop agent auth resolution (dry run)         \n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Setting             \u2502 Value                       \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Parsed provider     \u2502 Not resolved                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Resolved model      \u2502 Agent default               \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Endpoint            \u2502 Agent/SDK default (unknown) \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API format          \u2502 Agent/SDK default           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 API key precedence  \u2502 No agent auth resolution    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Base URL precedence \u2502 No agent auth resolution    \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nNo agent auth resolution\nKeys and model availability were not verified. Native login or other \nauthentication may apply when no API key is found.\nDry run OK \u2014 1 trial(s); nothing was run.\n",
+      "stderr": "Skipped: agents[0]: kwargs validation; agent has no options schema.\n"
+    }
+  },
+  "tasks": {
+    "task_01": {
+      "task_id": "task_01",
+      "dry_run_passed": true,
+      "nop": {
+        "task_id": "task_01",
+        "agent": "nop",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_01 -a nop -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop --job-name task_01_nop_20261125T073845Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop\\task_01_nop_20261125T073845Z",
+        "returncode": 0,
+        "duration_sec": 50.37,
+        "reward": 0.0,
+        "verifier_details": {
+          "feature_returncode": 1,
+          "regression_returncode": 0,
+          "reward": 0.0,
+          "feature_test_file": "test_feature_option_constraints.py",
+          "regression_targets": [
+            "tests/test_options.py",
+            "tests/test_defaults.py",
+            "tests/test_info_dict.py"
+          ]
+        },
+        "test_stdout_tail": "\"missing_partner\"])\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\\app\\src\\click\\decorators.py:370: in decorator\n    _param_memo(f, cls(param_decls, **attrs))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\\app\\src\\click\\core.py:3154: in __init__\n    super().__init__(\nE   TypeError: Parameter.__init__() got an unexpected keyword argument 'requires'. Did you mean 'required'?\n____________ test_option_to_info_dict_with_and_without_constraints ____________\ntests\\test_feature_option_constraints.py:137: in test_option_to_info_dict_with_and_without_constraints\n    constrained_opt = click.Option(\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_01__CwAxYJt__env_lfvdzlo0\\app\\src\\click\\core.py:3154: in __init__\n    super().__init__(\nE   TypeError: Parameter.__init__() got an unexpected keyword argument 'conflicts_with'\n=========================== short test summary info ===========================\nFAILED tests/test_feature_option_constraints.py::test_conflicts_with_rejects_both_flags\nFAILED tests/test_feature_option_constraints.py::test_conflicts_with_allows_defaults_without_false_positive\nFAILED tests/test_feature_option_constraints.py::test_asymmetric_conflicts_with_works_regardless_of_order\nFAILED tests/test_feature_option_constraints.py::test_requires_fails_when_dependency_missing_and_passes_when_given\nFAILED tests/test_feature_option_constraints.py::test_requires_satisfied_by_default_map_and_non_none_default\nFAILED tests/test_feature_option_constraints.py::test_envvar_conflict_and_requires_detection\nFAILED tests/test_feature_option_constraints.py::test_help_and_resilient_parsing_bypass_constraints\nFAILED tests/test_feature_option_constraints.py::test_option_to_info_dict_with_and_without_constraints\n============================== 8 failed in 2.56s ==============================\n\n=== REGRESSION TESTS ===\n........................................................................ [  9%]\n........................................................................ [ 18%]\n........................................................................ [ 27%]\n........................................................................ [ 36%]\n........................................................................ [ 45%]\n........................................................................ [ 54%]\n........................................................................ [ 63%]\n........................................................................ [ 72%]\n........................................................................ [ 81%]\n........................................................................ [ 90%]\n........................................................................ [ 99%]\n...                                                                      [100%]\n795 passed in 5.85s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 0.000 ---------------------------------------- 0:00:17 0:00:00\nadhoc \u2022 nop\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 17s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\nop\\task_01_nop_20261125T073845Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop\\task_01_nop_20261125T073845Z`\n\n",
+        "harbor_stderr_tail": "13:09:15 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "nop__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 0.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "0.0": [
+                    "task_01__CwAxYJt"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      },
+      "oracle": {
+        "task_id": "task_01",
+        "agent": "oracle",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_01 -a oracle -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle --job-name task_01_oracle_20261125T073935Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle\\task_01_oracle_20261125T073935Z",
+        "returncode": 0,
+        "duration_sec": 63.3,
+        "reward": 1.0,
+        "verifier_details": {
+          "feature_returncode": 0,
+          "regression_returncode": 0,
+          "reward": 1.0,
+          "feature_test_file": "test_feature_option_constraints.py",
+          "regression_targets": [
+            "tests/test_options.py",
+            "tests/test_defaults.py",
+            "tests/test_info_dict.py"
+          ]
+        },
+        "test_stdout_tail": "=== FEATURE TESTS ===\n============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\GRAGHA~1\\AppData\\Local\\Temp\\harbor_local_task_01__jXEnmS2__env_uevmax8t\\app\nconfigfile: pyproject.toml\ncollecting ... collected 8 items\n\ntests/test_feature_option_constraints.py::test_conflicts_with_rejects_both_flags PASSED [ 12%]\ntests/test_feature_option_constraints.py::test_conflicts_with_allows_defaults_without_false_positive PASSED [ 25%]\ntests/test_feature_option_constraints.py::test_asymmetric_conflicts_with_works_regardless_of_order PASSED [ 37%]\ntests/test_feature_option_constraints.py::test_requires_fails_when_dependency_missing_and_passes_when_given PASSED [ 50%]\ntests/test_feature_option_constraints.py::test_requires_satisfied_by_default_map_and_non_none_default PASSED [ 62%]\ntests/test_feature_option_constraints.py::test_envvar_conflict_and_requires_detection PASSED [ 75%]\ntests/test_feature_option_constraints.py::test_help_and_resilient_parsing_bypass_constraints PASSED [ 87%]\ntests/test_feature_option_constraints.py::test_option_to_info_dict_with_and_without_constraints PASSED [100%]\n\n============================== 8 passed in 0.84s ==============================\n\n=== REGRESSION TESTS ===\n........................................................................ [  9%]\n........................................................................ [ 18%]\n........................................................................ [ 27%]\n........................................................................ [ 36%]\n........................................................................ [ 45%]\n........................................................................ [ 54%]\n........................................................................ [ 63%]\n........................................................................ [ 72%]\n........................................................................ [ 81%]\n........................................................................ [ 90%]\n........................................................................ [ 99%]\n...                                                                      [100%]\n795 passed in 7.95s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 1.000 ---------------------------------------- 0:00:21 0:00:00\nadhoc \u2022 oracle\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 21s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\oracle\\task_01_oracle_20261125T073935Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle\\task_01_oracle_20261125T073935Z`\n\n",
+        "harbor_stderr_tail": "13:10:14 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "oracle__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 1.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "1.0": [
+                    "task_01__jXEnmS2"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      }
+    },
+    "task_02": {
+      "task_id": "task_02",
+      "dry_run_passed": true,
+      "nop": {
+        "task_id": "task_02",
+        "agent": "nop",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_02 -a nop -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop --job-name task_02_nop_20261125T074050Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop\\task_02_nop_20261125T074050Z",
+        "returncode": 0,
+        "duration_sec": 44.02,
+        "reward": 0.0,
+        "verifier_details": {
+          "feature_returncode": 1,
+          "regression_returncode": 0,
+          "reward": 0.0,
+          "feature_test_file": "test_feature_command_aliases.py",
+          "regression_targets": [
+            "tests/test_commands.py",
+            "tests/test_chain.py",
+            "tests/test_normalization.py",
+            "tests/test_info_dict.py"
+          ]
+        },
+        "test_stdout_tail": "est_token_normalize_func_applies_to_aliases _________________\ntests\\test_feature_command_aliases.py:97: in test_token_normalize_func_applies_to_aliases\n    @cli.command(aliases=[\"LS\"])\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_02__L3foSaQ__env_ejtirzag\\app\\src\\click\\core.py:1876: in decorator\n    cmd: Command = command(*args, **kwargs)(f)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_02__L3foSaQ__env_ejtirzag\\app\\src\\click\\decorators.py:244: in decorator\n    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'\n__________________ test_unknown_command_or_alias_still_fails __________________\ntests\\test_feature_command_aliases.py:112: in test_unknown_command_or_alias_still_fails\n    @cli.command(aliases=[\"co\"])\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_02__L3foSaQ__env_ejtirzag\\app\\src\\click\\core.py:1876: in decorator\n    cmd: Command = command(*args, **kwargs)(f)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_02__L3foSaQ__env_ejtirzag\\app\\src\\click\\decorators.py:244: in decorator\n    cmd = cls(name=cmd_name, callback=f, params=params, **attrs)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'\n____________ test_command_to_info_dict_aliases_backward_compatible ____________\ntests\\test_feature_command_aliases.py:124: in test_command_to_info_dict_aliases_backward_compatible\n    aliased = click.Command(\"run\", aliases=[\"r\", \"exec\"])\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   TypeError: Command.__init__() got an unexpected keyword argument 'aliases'\n=========================== short test summary info ===========================\nFAILED tests/test_feature_command_aliases.py::test_invoke_subcommand_via_aliases\nFAILED tests/test_feature_command_aliases.py::test_group_help_displays_aliases\nFAILED tests/test_feature_command_aliases.py::test_alias_collision_raises_value_error\nFAILED tests/test_feature_command_aliases.py::test_chained_group_resolves_aliases\nFAILED tests/test_feature_command_aliases.py::test_token_normalize_func_applies_to_aliases\nFAILED tests/test_feature_command_aliases.py::test_unknown_command_or_alias_still_fails\nFAILED tests/test_feature_command_aliases.py::test_command_to_info_dict_aliases_backward_compatible\n============================== 7 failed in 2.39s ==============================\n\n=== REGRESSION TESTS ===\n........................................................................ [ 44%]\n...............................................x........................ [ 89%]\n.................                                                        [100%]\n160 passed, 1 xfailed in 2.58s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 0.000 ---------------------------------------- 0:00:16 0:00:00\nadhoc \u2022 nop\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 16s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\nop\\task_02_nop_20261125T074050Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop\\task_02_nop_20261125T074050Z`\n\n",
+        "harbor_stderr_tail": "13:11:23 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "nop__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 0.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "0.0": [
+                    "task_02__L3foSaQ"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      },
+      "oracle": {
+        "task_id": "task_02",
+        "agent": "oracle",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_02 -a oracle -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle --job-name task_02_oracle_20261125T074134Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle\\task_02_oracle_20261125T074134Z",
+        "returncode": 0,
+        "duration_sec": 33.1,
+        "reward": 1.0,
+        "verifier_details": {
+          "feature_returncode": 0,
+          "regression_returncode": 0,
+          "reward": 1.0,
+          "feature_test_file": "test_feature_command_aliases.py",
+          "regression_targets": [
+            "tests/test_commands.py",
+            "tests/test_chain.py",
+            "tests/test_normalization.py",
+            "tests/test_info_dict.py"
+          ]
+        },
+        "test_stdout_tail": "=== FEATURE TESTS ===\n============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\GRAGHA~1\\AppData\\Local\\Temp\\harbor_local_task_02__6qbaiPv__env_dvhnt967\\app\nconfigfile: pyproject.toml\ncollecting ... collected 7 items\n\ntests/test_feature_command_aliases.py::test_invoke_subcommand_via_aliases PASSED [ 14%]\ntests/test_feature_command_aliases.py::test_group_help_displays_aliases PASSED [ 28%]\ntests/test_feature_command_aliases.py::test_alias_collision_raises_value_error PASSED [ 42%]\ntests/test_feature_command_aliases.py::test_chained_group_resolves_aliases PASSED [ 57%]\ntests/test_feature_command_aliases.py::test_token_normalize_func_applies_to_aliases PASSED [ 71%]\ntests/test_feature_command_aliases.py::test_unknown_command_or_alias_still_fails PASSED [ 85%]\ntests/test_feature_command_aliases.py::test_command_to_info_dict_aliases_backward_compatible PASSED [100%]\n\n============================== 7 passed in 0.19s ==============================\n\n=== REGRESSION TESTS ===\n........................................................................ [ 44%]\n...............................................x........................ [ 89%]\n.................                                                        [100%]\n160 passed, 1 xfailed in 2.27s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 1.000 ---------------------------------------- 0:00:06 0:00:00\nadhoc \u2022 oracle\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 7s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\oracle\\task_02_oracle_20261125T074134Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle\\task_02_oracle_20261125T074134Z`\n\n",
+        "harbor_stderr_tail": "13:11:51 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "oracle__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 1.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "1.0": [
+                    "task_02__6qbaiPv"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      }
+    },
+    "task_03": {
+      "task_id": "task_03",
+      "dry_run_passed": true,
+      "nop": {
+        "task_id": "task_03",
+        "agent": "nop",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_03 -a nop -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop --job-name task_03_nop_20261125T074216Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop\\task_03_nop_20261125T074216Z",
+        "returncode": 0,
+        "duration_sec": 42.12,
+        "reward": 0.0,
+        "verifier_details": {
+          "feature_returncode": 1,
+          "regression_returncode": 0,
+          "reward": 0.0,
+          "feature_test_file": "test_feature_bytesize_type.py",
+          "regression_targets": [
+            "tests/test_types/",
+            "tests/test_info_dict.py"
+          ]
+        },
+        "test_stdout_tail": ":144: in __getattr__\n    raise AttributeError(name)\nE   AttributeError: ByteSize\n=========================== short test summary info ===========================\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[0-0]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512-512]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512B-512]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2K-2048]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KB-2048]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KiB-2048]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5KiB-1536]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[ 4 mib -4194304]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1G-1073741824]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5 GiB-1610612736]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2TB-2199023255552]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1PiB-1125899906842624]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[4096-4096]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_decimal_si_mode_and_explicit_iec\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_bounds_enforcement\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_invalid_constructor_bounds\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[   ]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[-10MB]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[NaN]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[inf]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[10XB]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[MB]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[True]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[False]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[12.5]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[bad_val10]\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_cli_integration - A...\nFAILED tests/test_feature_bytesize_type.py::test_bytesize_metadata_and_metavar\n============================= 29 failed in 1.87s ==============================\n\n=== REGRESSION TESTS ===\n..............................s.s....................................... [ 67%]\n..................................                                       [100%]\n104 passed, 2 skipped in 1.91s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 0.000 ---------------------------------------- 0:00:13 0:00:00\nadhoc \u2022 nop\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 13s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\nop\\task_03_nop_20261125T074216Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop\\task_03_nop_20261125T074216Z`\n\n",
+        "harbor_stderr_tail": "13:12:42 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "nop__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 0.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "0.0": [
+                    "task_03__YszmxXQ"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      },
+      "oracle": {
+        "task_id": "task_03",
+        "agent": "oracle",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_03 -a oracle -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle --job-name task_03_oracle_20261125T074258Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle\\task_03_oracle_20261125T074258Z",
+        "returncode": 0,
+        "duration_sec": 43.4,
+        "reward": 1.0,
+        "verifier_details": {
+          "feature_returncode": 0,
+          "regression_returncode": 0,
+          "reward": 1.0,
+          "feature_test_file": "test_feature_bytesize_type.py",
+          "regression_targets": [
+            "tests/test_types/",
+            "tests/test_info_dict.py"
+          ]
+        },
+        "test_stdout_tail": ":test_bytesize_binary_conversions[0-0] PASSED [  3%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512-512] PASSED [  6%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[512B-512] PASSED [ 10%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2K-2048] PASSED [ 13%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KB-2048] PASSED [ 17%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2KiB-2048] PASSED [ 20%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5KiB-1536] PASSED [ 24%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[ 4 mib -4194304] PASSED [ 27%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1G-1073741824] PASSED [ 31%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1.5 GiB-1610612736] PASSED [ 34%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[2TB-2199023255552] PASSED [ 37%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[1PiB-1125899906842624] PASSED [ 41%]\ntests/test_feature_bytesize_type.py::test_bytesize_binary_conversions[4096-4096] PASSED [ 44%]\ntests/test_feature_bytesize_type.py::test_bytesize_decimal_si_mode_and_explicit_iec PASSED [ 48%]\ntests/test_feature_bytesize_type.py::test_bytesize_bounds_enforcement PASSED [ 51%]\ntests/test_feature_bytesize_type.py::test_bytesize_invalid_constructor_bounds PASSED [ 55%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[] PASSED [ 58%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[   ] PASSED [ 62%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[-10MB] PASSED [ 65%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[NaN] PASSED [ 68%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[inf] PASSED [ 72%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[10XB] PASSED [ 75%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[MB] PASSED [ 79%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[True] PASSED [ 82%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[False] PASSED [ 86%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[12.5] PASSED [ 89%]\ntests/test_feature_bytesize_type.py::test_bytesize_rejects_invalid_inputs[bad_val10] PASSED [ 93%]\ntests/test_feature_bytesize_type.py::test_bytesize_cli_integration PASSED [ 96%]\ntests/test_feature_bytesize_type.py::test_bytesize_metadata_and_metavar PASSED [100%]\n\n============================= 29 passed in 0.51s ==============================\n\n=== REGRESSION TESTS ===\n..............................s.s....................................... [ 67%]\n..................................                                       [100%]\n104 passed, 2 skipped in 1.96s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 1.000 ---------------------------------------- 0:00:12 0:00:00\nadhoc \u2022 oracle\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 12s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\oracle\\task_03_oracle_20261125T074258Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle\\task_03_oracle_20261125T074258Z`\n\n",
+        "harbor_stderr_tail": "13:13:25 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "oracle__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 1.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "1.0": [
+                    "task_03__QebGSB3"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      }
+    },
+    "task_04": {
+      "task_id": "task_04",
+      "dry_run_passed": true,
+      "nop": {
+        "task_id": "task_04",
+        "agent": "nop",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_04 -a nop -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop --job-name task_04_nop_20261125T075929Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop\\task_04_nop_20261125T075929Z",
+        "returncode": 0,
+        "duration_sec": 29.09,
+        "reward": 0.0,
+        "verifier_details": {
+          "feature_returncode": 1,
+          "regression_returncode": 0,
+          "reward": 0.0,
+          "feature_test_file": "test_feature_no_color_env.py",
+          "regression_targets": [
+            "tests/test_basic.py",
+            "tests/test_termui.py",
+            "tests/test_compat.py",
+            "tests/test_context.py"
+          ]
+        },
+        "test_stdout_tail": "_default() is True\nE   assert None is True\nE    +  where None = resolve_color_default()\n__________________ test_force_color_enables_color_on_non_tty __________________\ntests\\test_feature_no_color_env.py:51: in test_force_color_enables_color_on_non_tty\n    assert resolve_color_default() is True\nE   assert None is True\nE    +  where None = resolve_color_default()\n________________ test_force_color_zero_or_false_does_not_force ________________\ntests\\test_feature_no_color_env.py:69: in test_force_color_zero_or_false_does_not_force\n    assert resolve_color_default() is True\nE   assert None is True\nE    +  where None = resolve_color_default()\n_____________________ test_no_color_overrides_force_color _____________________\ntests\\test_feature_no_color_env.py:79: in test_no_color_overrides_force_color\n    assert resolve_color_default() is False\nE   assert None is False\nE    +  where None = resolve_color_default()\n_______________ test_explicit_color_argument_overrides_env_vars _______________\ntests\\test_feature_no_color_env.py:87: in test_explicit_color_argument_overrides_env_vars\n    assert resolve_color_default() is False\nE   assert None is False\nE    +  where None = resolve_color_default()\n____________________ test_context_color_overrides_env_vars ____________________\ntests\\test_feature_no_color_env.py:105: in test_context_color_overrides_env_vars\n    assert resolve_color_default() is False\nE   assert None is False\nE    +  where None = resolve_color_default()\n=========================== short test summary info ===========================\nFAILED tests/test_feature_no_color_env.py::test_no_color_disables_color_even_on_tty\nFAILED tests/test_feature_no_color_env.py::test_empty_no_color_has_no_effect\nFAILED tests/test_feature_no_color_env.py::test_force_color_enables_color_on_non_tty\nFAILED tests/test_feature_no_color_env.py::test_force_color_zero_or_false_does_not_force\nFAILED tests/test_feature_no_color_env.py::test_no_color_overrides_force_color\nFAILED tests/test_feature_no_color_env.py::test_explicit_color_argument_overrides_env_vars\nFAILED tests/test_feature_no_color_env.py::test_context_color_overrides_env_vars\n============================== 7 failed in 0.51s ==============================\n\n=== REGRESSION TESTS ===\n........................................................................ [ 12%]\n........................................................................ [ 24%]\n..............ss..........................ssss.......................... [ 36%]\n......ssssssssssss......................sssssss......................... [ 48%]\n........................................................................ [ 60%]\n........................................................................ [ 72%]\n........................................................................ [ 84%]\n........................................................................ [ 96%]\n..................                                                       [100%]\n569 passed, 25 skipped in 3.42s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 0.000 ---------------------------------------- 0:00:10 0:00:00\nadhoc \u2022 nop\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 10s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\nop\\task_04_nop_20261125T075929Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop\\task_04_nop_20261125T075929Z`\n\n",
+        "harbor_stderr_tail": "13:29:48 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "nop__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 0.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "0.0": [
+                    "task_04__h2M4SuA"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      },
+      "oracle": {
+        "task_id": "task_04",
+        "agent": "oracle",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_04 -a oracle -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle --job-name task_04_oracle_20261125T075959Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle\\task_04_oracle_20261125T075959Z",
+        "returncode": 0,
+        "duration_sec": 27.46,
+        "reward": 1.0,
+        "verifier_details": {
+          "feature_returncode": 0,
+          "regression_returncode": 0,
+          "reward": 1.0,
+          "feature_test_file": "test_feature_no_color_env.py",
+          "regression_targets": [
+            "tests/test_basic.py",
+            "tests/test_termui.py",
+            "tests/test_compat.py",
+            "tests/test_context.py"
+          ]
+        },
+        "test_stdout_tail": "=== FEATURE TESTS ===\n============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\GRAGHA~1\\AppData\\Local\\Temp\\harbor_local_task_04__brDZkG6__env_ehkijbli\\app\nconfigfile: pyproject.toml\ncollecting ... collected 7 items\n\ntests/test_feature_no_color_env.py::test_no_color_disables_color_even_on_tty PASSED [ 14%]\ntests/test_feature_no_color_env.py::test_empty_no_color_has_no_effect PASSED [ 28%]\ntests/test_feature_no_color_env.py::test_force_color_enables_color_on_non_tty PASSED [ 42%]\ntests/test_feature_no_color_env.py::test_force_color_zero_or_false_does_not_force PASSED [ 57%]\ntests/test_feature_no_color_env.py::test_no_color_overrides_force_color PASSED [ 71%]\ntests/test_feature_no_color_env.py::test_explicit_color_argument_overrides_env_vars PASSED [ 85%]\ntests/test_feature_no_color_env.py::test_context_color_overrides_env_vars PASSED [100%]\n\n============================== 7 passed in 0.28s ==============================\n\n=== REGRESSION TESTS ===\n........................................................................ [ 12%]\n........................................................................ [ 24%]\n..............ss..........................ssss.......................... [ 36%]\n......ssssssssssss......................sssssss......................... [ 48%]\n........................................................................ [ 60%]\n........................................................................ [ 72%]\n........................................................................ [ 84%]\n........................................................................ [ 96%]\n..................                                                       [100%]\n569 passed, 25 skipped in 3.41s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 1.000 ---------------------------------------- 0:00:10 0:00:00\nadhoc \u2022 oracle\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 10s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\oracle\\task_04_oracle_20261125T075959Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle\\task_04_oracle_20261125T075959Z`\n\n",
+        "harbor_stderr_tail": "13:30:17 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "oracle__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 1.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "1.0": [
+                    "task_04__brDZkG6"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      }
+    },
+    "task_05": {
+      "task_id": "task_05",
+      "dry_run_passed": true,
+      "nop": {
+        "task_id": "task_05",
+        "agent": "nop",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_05 -a nop -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop --job-name task_05_nop_20261125T074533Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\nop\\task_05_nop_20261125T074533Z",
+        "returncode": 0,
+        "duration_sec": 46.45,
+        "reward": 0.0,
+        "verifier_details": {
+          "feature_returncode": 1,
+          "regression_returncode": 0,
+          "reward": 0.0,
+          "feature_test_file": "test_feature_echo_table.py",
+          "regression_targets": [
+            "tests/test_termui.py",
+            "tests/test_imports.py"
+          ]
+        },
+        "test_stdout_tail": "ask_05__JbvZfRT__env_11p_xt2b\\app\\src\\click\\__init__.py:144: in __getattr__\n    raise AttributeError(name)\nE   AttributeError: format_table\n________________ test_format_table_ragged_rows_none_and_empty _________________\ntests\\test_feature_echo_table.py:68: in test_format_table_ragged_rows_none_and_empty\n    assert click.format_table([]) == \"\"\n           ^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_05__JbvZfRT__env_11p_xt2b\\app\\src\\click\\__init__.py:144: in __getattr__\n    raise AttributeError(name)\nE   AttributeError: format_table\n_________________ test_format_table_max_col_width_truncation __________________\ntests\\test_feature_echo_table.py:86: in test_format_table_max_col_width_truncation\n    out = click.format_table(\n          ^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_05__JbvZfRT__env_11p_xt2b\\app\\src\\click\\__init__.py:144: in __getattr__\n    raise AttributeError(name)\nE   AttributeError: format_table\n_____________________ test_format_table_invalid_arguments _____________________\ntests\\test_feature_echo_table.py:101: in test_format_table_invalid_arguments\n    click.format_table([[\"a\"]], border=\"markdown\")  # type: ignore[arg-type]\n    ^^^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_05__JbvZfRT__env_11p_xt2b\\app\\src\\click\\__init__.py:144: in __getattr__\n    raise AttributeError(name)\nE   AttributeError: format_table\n____________________ test_echo_table_stream_and_cli_runner ____________________\ntests\\test_feature_echo_table.py:113: in test_echo_table_stream_and_cli_runner\n    click.echo_table([[styled, 10]], headers=[\"Status\", \"N\"], file=buf, color=False)\n    ^^^^^^^^^^^^^^^^\nC:\\Users\\G Raghava\\AppData\\Local\\Temp\\harbor_local_task_05__JbvZfRT__env_11p_xt2b\\app\\src\\click\\__init__.py:144: in __getattr__\n    raise AttributeError(name)\nE   AttributeError: echo_table\n=========================== short test summary info ===========================\nFAILED tests/test_feature_echo_table.py::test_format_table_simple_default_and_alignment\nFAILED tests/test_feature_echo_table.py::test_format_table_plain_and_grid_borders\nFAILED tests/test_feature_echo_table.py::test_format_table_ansi_aware_alignment\nFAILED tests/test_feature_echo_table.py::test_format_table_ragged_rows_none_and_empty\nFAILED tests/test_feature_echo_table.py::test_format_table_max_col_width_truncation\nFAILED tests/test_feature_echo_table.py::test_format_table_invalid_arguments\nFAILED tests/test_feature_echo_table.py::test_echo_table_stream_and_cli_runner\n============================== 7 failed in 1.46s ==============================\n\n=== REGRESSION TESTS ===\n.................................................ss..................... [ 25%]\n.....ssss................................ssssssssssss................... [ 50%]\n...sssssss.............................................................. [ 75%]\n........................................................................ [100%]\n263 passed, 25 skipped in 4.49s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 0.000 ---------------------------------------- 0:00:15 0:00:00\nadhoc \u2022 nop\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 0.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 0.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 15s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\nop\\task_05_nop_20261125T074533Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\nop\\task_05_nop_20261125T074533Z`\n\n",
+        "harbor_stderr_tail": "13:16:03 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "nop__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 0.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "0.0": [
+                    "task_05__JbvZfRT"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      },
+      "oracle": {
+        "task_id": "task_05",
+        "agent": "oracle",
+        "environment": "core.harbor_local_env:LocalWorktreeEnvironment",
+        "command": "C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\harbor.exe run -p C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\tasks\\task_05 -a oracle -k 1 -o C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle --job-name task_05_oracle_20261125T074620Z --no-delete -y --env core.harbor_local_env:LocalWorktreeEnvironment",
+        "job_dir": "C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE AI\\output\\harbor_jobs\\oracle\\task_05_oracle_20261125T074620Z",
+        "returncode": 0,
+        "duration_sec": 43.64,
+        "reward": 1.0,
+        "verifier_details": {
+          "feature_returncode": 0,
+          "regression_returncode": 0,
+          "reward": 1.0,
+          "feature_test_file": "test_feature_echo_table.py",
+          "regression_targets": [
+            "tests/test_termui.py",
+            "tests/test_imports.py"
+          ]
+        },
+        "test_stdout_tail": "=== FEATURE TESTS ===\n============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\\Users\\G Raghava\\AppData\\Local\\Programs\\Python\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\GRAGHA~1\\AppData\\Local\\Temp\\harbor_local_task_05__XcwkwKX__env_rww7nt14\\app\nconfigfile: pyproject.toml\ncollecting ... collected 7 items\n\ntests/test_feature_echo_table.py::test_format_table_simple_default_and_alignment PASSED [ 14%]\ntests/test_feature_echo_table.py::test_format_table_plain_and_grid_borders PASSED [ 28%]\ntests/test_feature_echo_table.py::test_format_table_ansi_aware_alignment PASSED [ 42%]\ntests/test_feature_echo_table.py::test_format_table_ragged_rows_none_and_empty PASSED [ 57%]\ntests/test_feature_echo_table.py::test_format_table_max_col_width_truncation PASSED [ 71%]\ntests/test_feature_echo_table.py::test_format_table_invalid_arguments PASSED [ 85%]\ntests/test_feature_echo_table.py::test_echo_table_stream_and_cli_runner PASSED [100%]\n\n============================== 7 passed in 0.41s ==============================\n\n=== REGRESSION TESTS ===\n.................................................ss..................... [ 25%]\n.....ssss................................ssssssssssss................... [ 50%]\n...sssssss.............................................................. [ 75%]\n........................................................................ [100%]\n263 passed, 25 skipped in 4.73s\n\n",
+        "harbor_stdout_tail": "  1/1 Mean: 1.000 ---------------------------------------- 0:00:15 0:00:00\nadhoc \u2022 oracle\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Trials \u2502 Exceptions \u2502  Mean \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502      1 \u2502          0 \u2502 1.000 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reward \u2502 Count \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 1.0    \u2502     1 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nJob Info\nTotal runtime: 15s\nResults written to C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE \nAI\\output\\harbor_jobs\\oracle\\task_05_oracle_20261125T074620Z\\result.json\nInspect results by running `harbor view C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle`\nShare results by running `harbor upload C:\\Users\\G Raghava\\Desktop\\FEATUREFORGE\nAI\\output\\harbor_jobs\\oracle\\task_05_oracle_20261125T074620Z`\n\n",
+        "harbor_stderr_tail": "13:16:47 - LiteLLM:WARNING: get_model_cost_map.py:449 - LiteLLM: Failed to fetch remote model cost map from https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: error fetching https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json: could not reach the provider: error sending request: client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001). Falling back to local backup.\n",
+        "trial_summary": {
+          "n_completed_trials": 1,
+          "n_errored_trials": 0,
+          "n_running_trials": 0,
+          "n_pending_trials": 0,
+          "n_cancelled_trials": 0,
+          "n_retries": 0,
+          "evals": {
+            "oracle__adhoc": {
+              "n_trials": 1,
+              "n_errors": 0,
+              "metrics": [
+                {
+                  "mean": 1.0
+                }
+              ],
+              "pass_at_k": {},
+              "reward_stats": {
+                "reward": {
+                  "1.0": [
+                    "task_05__XcwkwKX"
+                  ]
+                }
+              },
+              "exception_stats": {}
+            }
+          },
+          "n_input_tokens": null,
+          "n_cache_tokens": null,
+          "n_output_tokens": null,
+          "cost_usd": null
+        }
+      }
+    }
+  },
+  "summary": {
+    "tasks_evaluated": 5,
+    "nop_rewards": {
+      "task_01": 0.0,
+      "task_02": 0.0,
+      "task_03": 0.0,
+      "task_04": 0.0,
+      "task_05": 0.0
+    },
+    "oracle_rewards": {
+      "task_01": 1.0,
+      "task_02": 1.0,
+      "task_03": 1.0,
+      "task_04": 1.0,
+      "task_05": 1.0
+    },
+    "nop_all_zero": true,
+    "oracle_all_one": true,
+    "total_duration_sec": 523.67
+  }
+}

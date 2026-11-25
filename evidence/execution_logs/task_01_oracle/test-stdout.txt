@@ -1,0 +1,34 @@
+=== FEATURE TESTS ===
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\G Raghava\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\GRAGHA~1\AppData\Local\Temp\harbor_local_task_01__jXEnmS2__env_uevmax8t\app
+configfile: pyproject.toml
+collecting ... collected 8 items
+
+tests/test_feature_option_constraints.py::test_conflicts_with_rejects_both_flags PASSED [ 12%]
+tests/test_feature_option_constraints.py::test_conflicts_with_allows_defaults_without_false_positive PASSED [ 25%]
+tests/test_feature_option_constraints.py::test_asymmetric_conflicts_with_works_regardless_of_order PASSED [ 37%]
+tests/test_feature_option_constraints.py::test_requires_fails_when_dependency_missing_and_passes_when_given PASSED [ 50%]
+tests/test_feature_option_constraints.py::test_requires_satisfied_by_default_map_and_non_none_default PASSED [ 62%]
+tests/test_feature_option_constraints.py::test_envvar_conflict_and_requires_detection PASSED [ 75%]
+tests/test_feature_option_constraints.py::test_help_and_resilient_parsing_bypass_constraints PASSED [ 87%]
+tests/test_feature_option_constraints.py::test_option_to_info_dict_with_and_without_constraints PASSED [100%]
+
+============================== 8 passed in 0.84s ==============================
+
+=== REGRESSION TESTS ===
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 27%]
+........................................................................ [ 36%]
+........................................................................ [ 45%]
+........................................................................ [ 54%]
+........................................................................ [ 63%]
+........................................................................ [ 72%]
+........................................................................ [ 81%]
+........................................................................ [ 90%]
+........................................................................ [ 99%]
+...                                                                      [100%]
+795 passed in 7.95s
+

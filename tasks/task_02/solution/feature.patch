@@ -1,0 +1,118 @@
+--- a/src/click/core.py
++++ b/src/click/core.py
+@@ -1055,6 +1055,7 @@
+     no_args_is_help: bool
+     hidden: bool
+     deprecated: bool | str
++    aliases: tuple[str, ...]
+ 
+     def __init__(
+         self,
+@@ -1070,6 +1071,7 @@
+         no_args_is_help: bool = False,
+         hidden: bool = False,
+         deprecated: bool | str = False,
++        aliases: cabc.Sequence[str] | None = None,
+     ) -> None:
+         #: the name the command thinks it has.  Upon registering a command
+         #: on a :class:`Group` the group will default the command name
+@@ -1099,6 +1101,9 @@
+         self.no_args_is_help = no_args_is_help
+         self.hidden = hidden
+         self.deprecated = deprecated
++        self.aliases = tuple(
++            dict.fromkeys(a for a in (aliases or ()) if a and a != name)
++        )
+ 
+     def to_info_dict(self, ctx: Context) -> dict[str, t.Any]:
+         return {
+@@ -1109,6 +1114,7 @@
+             "short_help": self.short_help,
+             "hidden": self.hidden,
+             "deprecated": self.deprecated,
++            **({"aliases": list(self.aliases)} if self.aliases else {}),
+         }
+ 
+     def __repr__(self) -> str:
+@@ -1831,6 +1837,18 @@
+         if name is None:
+             raise TypeError("Command has no name.")
+         _check_nested_chain(self, name, cmd, register=True)
++        for existing_name, existing_cmd in self.commands.items():
++            if existing_name == name:
++                continue
++            if name in existing_cmd.aliases:
++                raise ValueError(
++                    f"Command name {name!r} collides with alias of {existing_name!r}."
++                )
++            for alias in cmd.aliases:
++                if alias == existing_name or alias in existing_cmd.aliases:
++                    raise ValueError(
++                        f"Alias {alias!r} for command {name!r} collides with {existing_name!r}."
++                    )
+         self.commands[name] = cmd
+ 
+     @t.overload
+@@ -2011,7 +2029,10 @@
+             if cmd.hidden:
+                 continue
+ 
+-            commands.append((subcommand, cmd))
++            display_name = subcommand
++            if cmd.aliases:
++                display_name = f"{subcommand} ({', '.join(cmd.aliases)})"
++            commands.append((display_name, cmd))
+ 
+         # allow for 3 times the default spacing
+         if len(commands):
+@@ -2108,6 +2129,23 @@
+                     rv.append(sub_ctx.command.invoke(sub_ctx))
+             return _process_result(rv)
+ 
++    def _resolve_alias(
++        self, ctx: Context, candidate: str, *, normalize: bool
++    ) -> tuple[str, Command] | None:
++        for sub_name in self.list_commands(ctx):
++            sub_cmd = self.get_command(ctx, sub_name)
++            if sub_cmd is None:
++                continue
++            for alias in sub_cmd.aliases:
++                target = (
++                    ctx.token_normalize_func(alias)
++                    if normalize and ctx.token_normalize_func is not None
++                    else alias
++                )
++                if target == candidate:
++                    return sub_name, sub_cmd
++        return None
++
+     def resolve_command(
+         self, ctx: Context, args: list[str]
+     ) -> tuple[str | None, Command | None, list[str]]:
+@@ -2116,11 +2154,23 @@
+         # Get the command
+         cmd = self.get_command(ctx, cmd_name)
+ 
++        # If we can't find the command directly, try alias resolution.
++        if cmd is None:
++            resolved = self._resolve_alias(ctx, cmd_name, normalize=False)
++            if resolved is not None:
++                cmd_name, cmd = resolved
++
+         # If we can't find the command but there is a normalization
+-        # function available, we try with that one.
++        # function available, we try with that one (including aliases).
+         if cmd is None and ctx.token_normalize_func is not None:
+-            cmd_name = ctx.token_normalize_func(cmd_name)
+-            cmd = self.get_command(ctx, cmd_name)
++            norm_name = ctx.token_normalize_func(cmd_name)
++            cmd = self.get_command(ctx, norm_name)
++            if cmd is not None:
++                cmd_name = norm_name
++            else:
++                resolved = self._resolve_alias(ctx, norm_name, normalize=True)
++                if resolved is not None:
++                    cmd_name, cmd = resolved
+ 
+         # If we don't find the command we want to show an error message
+         # to the user that it was not provided.  However, there is

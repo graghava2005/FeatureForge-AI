@@ -1,0 +1,9 @@
+[
+  "test_feature_no_color_env.py::test_no_color_disables_color_even_on_tty",
+  "test_feature_no_color_env.py::test_empty_no_color_has_no_effect",
+  "test_feature_no_color_env.py::test_force_color_enables_color_on_non_tty",
+  "test_feature_no_color_env.py::test_force_color_zero_or_false_does_not_force",
+  "test_feature_no_color_env.py::test_no_color_overrides_force_color",
+  "test_feature_no_color_env.py::test_explicit_color_argument_overrides_env_vars",
+  "test_feature_no_color_env.py::test_context_color_overrides_env_vars"
+]

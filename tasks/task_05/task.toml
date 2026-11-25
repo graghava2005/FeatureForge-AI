@@ -1,0 +1,31 @@
+schema_version = "1.4"
+
+[task]
+name = "featureforge/click-echo-table"
+version = "0.1.0"
+description = "ANSI-Aware Terminal Table Formatting and Output (format_table / echo_table)"
+keywords = ["python", "click", "feature-development", "terminal-ui"]
+
+[metadata]
+task_id = "task_05"
+slug = "echo-table"
+repository = "pallets/click"
+base_commit = "08b803cf32ceb2ae6a772c62d5da42757a897d44"
+category = "feature-development"
+subsystem = "terminal-ui"
+difficulty = "medium"
+language = "python"
+test_framework = "pytest"
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 600.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096
+workdir = "/app"
